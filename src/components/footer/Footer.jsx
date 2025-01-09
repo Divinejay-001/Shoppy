@@ -1,7 +1,7 @@
 import React from 'react'
 import footerLogo from '../../assets/logo.png';
 import Banner from '../../assets/website/footer-pattern.jpg'
-import { FaInstagram, FaFacebook, FaLinkedin, FaLocationArrow, FaMobileAlt } from 'react-icons/fa';
+import { FaInstagram, FaFacebook,  FaLocationArrow, FaMobileAlt, FaGithub, FaTwitter } from 'react-icons/fa';
 
 const BannerImg = {
     backgroundImage: `url(${Banner})`,
@@ -91,14 +91,17 @@ Shophere
                     {/* social links  */}
         <div>
             <div className="flex items-center gap-3 mt-6">
-                <a href="#">
+                <a href="https://instagram.com/divinegiftchidalu">
                    <FaInstagram className='text-3xl hover:scale-125 duration-300 hover:bg-[#EAC06C] hover:rounded-full hover:p-2'/> 
                 </a>
-                <a href="#">
+                <a href="https://www.facebook.com/DivinegiftJohnso">
                    <FaFacebook className='text-3xl hover:scale-125 duration-300 hover:bg-[#EAC06C] hover:rounded-full hover:p-2'/> 
                 </a>
-                <a href="#">
-                   <FaLinkedin className='text-3xl hover:scale-125 duration-300 hover:bg-[#EAC06C] hover:rounded-full hover:p-2'/> 
+                <a href="https://twitter.com/Divinegift9503">
+                   <FaTwitter className='text-3xl hover:scale-125 duration-300 hover:bg-[#EAC06C] hover:rounded-full hover:p-2'/> 
+                </a>
+                <a href="https://github.com/Divinejay-001">
+                   <FaGithub className='text-3xl hover:scale-125 duration-300 hover:bg-[#EAC06C] hover:rounded-full hover:p-2'/> 
                 </a>
 
             </div>
