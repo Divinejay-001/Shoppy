@@ -1,30 +1,34 @@
 import React from 'react'
 import Slider from 'react-slick'
+import Img1 from '../../assets/test/img1.jpeg'
+import Img2 from '../../assets/test/img2.jpeg'
+import Img3 from '../../assets/test/img3.jpeg'
+import Img4 from '../../assets/test/img4.jpeg'
 
 const TestimonialData = [
     {
         id: 1,
         name: "Sebastian",
         text: "This service exceeded my expectations! The attention to detail and customer support were phenomenal. Highly recommend!",
-        img: "https://picsum.photos/101/101",
+        img: Img1,
     },
     {
         id: 2,
         name: "Mandy Rose",
         text: "I am absolutely thrilled with my experience. The team was professional, efficient, and went above and beyond. Thank you!",
-        img: "https://picsum.photos/102/102",
+        img: Img4,
     },
     {
         id: 3,
         name: "Christian",
         text: "Fantastic quality and exceptional service! I've already recommended it to my friends and family.",
-        img: "https://picsum.photos/103/103",
+        img: Img2,
     },
     {
         id: 4,
         name: "Lily",
         text: "A seamless experience from start to finish. The results were exactly what I was looking for. Can't wait to use their services again!",
-        img: "https://picsum.photos/104/104",
+        img: Img3,
     },
 ];
 
@@ -97,7 +101,7 @@ data-aos='zoom-in'>
       bg-primary/10 relative '>
 <div className='mb-4'>
 <img src={data.img} alt="" className='rounded-full
-w-20 h-20'/>
+w-20 h-20 object-cover'/>
 </div>
 <div className='flex flex-col items-center gap-4'>
     <div className='space-y-3 '>
