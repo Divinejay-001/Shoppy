@@ -45,9 +45,9 @@ const Footer = () => {
                     flex items-center gap-3 '>
                         <img src={footerLogo} alt="" 
                         className='max-w-[50px]'/>
-Shoppy
+Shophere
                     </h1>
-                    <p>Thank you for shopping with us! At [Your Store Name], we're committed to providing you with top-quality products and an exceptional shopping experience. </p>
+                    <p>Thank you for shopping with us! At Shophere, we're committed to providing you with top-quality products and an exceptional shopping experience. </p>
                           </div>
                 {/* Footer Links  */}
                 <div className=' grid grid-cols-1 
