@@ -79,7 +79,7 @@ const Testimonial = () => {
  <div className='text-center mt-8 max-w-[600px] lg:h-[200px] mx-auto'>
     <p data-aos='fadeup' className='text-sm text-primary '>What Our Customers Say </p>
     <h1 data-aos='fadeup' className='text-3xl font-bold'>Testimonials</h1>
-    <p data-aos='fadeup' className='text-xs text-gray-600 '>
+    <p data-aos='fadeup' className='text-xs text-gray-600  dark:text-gray-300'>
     Hear directly from our satisfied customers about their experiences with our service. 
     From exceptional quality to unparalleled support, these stories showcase our commitment 
     to excellence and the trust we've earned over time. Discover why our customers keep coming 
@@ -105,14 +105,14 @@ w-20 h-20 object-cover'/>
 </div>
 <div className='flex flex-col items-center gap-4'>
     <div className='space-y-3 '>
-         <p className='text-xs text-gray-500
+         <p className='text-xs text-gray-600 dark:text-gray-400
     '>{data.text}</p>
     <h1 className='text-xl font-bold text-black/80
     dark:text-light'>{data.name}</h1>
     </div>
    
 </div>
-<p className='text-black/30 text-9xl font-serif
+<p className='text-black/30 dark:text-black/55 text-9xl font-serif
 absolute top-0 right-0'>,,</p>
         </div>
         </div>

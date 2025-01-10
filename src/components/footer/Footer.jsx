@@ -90,18 +90,19 @@ Shophere
                     </div>
                     {/* social links  */}
         <div>
+            <p className='mt-8'>Follow Us On</p>
             <div className="flex items-center gap-3 mt-6">
                 <a href="https://instagram.com/divinegiftchidalu">
-                   <FaInstagram className='text-3xl hover:scale-125 duration-300 hover:bg-[#EAC06C] hover:rounded-full hover:p-2'/> 
+                   <FaInstagram className='text-3xl dark:hover:bg-blue-400 hover:scale-125 duration-300 hover:bg-[#EAC06C] hover:rounded-full hover:p-2'/> 
                 </a>
                 <a href="https://www.facebook.com/DivinegiftJohnso">
-                   <FaFacebook className='text-3xl hover:scale-125 duration-300 hover:bg-[#EAC06C] hover:rounded-full hover:p-2'/> 
+                   <FaFacebook className='text-3xl  dark:hover:bg-blue-400  hover:scale-125 duration-300 hover:bg-[#EAC06C] hover:rounded-full hover:p-2'/> 
                 </a>
                 <a href="https://twitter.com/Divinegift9503">
-                   <FaTwitter className='text-3xl hover:scale-125 duration-300 hover:bg-[#EAC06C] hover:rounded-full hover:p-2'/> 
+                   <FaTwitter className='text-3xl  dark:hover:bg-blue-400  hover:scale-125 duration-300 hover:bg-[#EAC06C] hover:rounded-full hover:p-2'/> 
                 </a>
                 <a href="https://github.com/Divinejay-001">
-                   <FaGithub className='text-3xl hover:scale-125 duration-300 hover:bg-[#EAC06C] hover:rounded-full hover:p-2'/> 
+                   <FaGithub className='text-3xl  dark:hover:bg-blue-400  hover:scale-125 duration-300 hover:bg-[#EAC06C] hover:rounded-full hover:p-2'/> 
                 </a>
 
             </div>
