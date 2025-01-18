@@ -3,6 +3,9 @@ import image1 from '../../assets/hero/women.png'
 import image2 from '../../assets/hero/shopping.png'
 import image3 from '../../assets/hero/sale.png'
 import image4 from '../../assets/hero/Premium.png'
+import image5 from '../../assets/hero/carte.png'
+import image6 from '../../assets/hero/spring.png'
+import image7 from '../../assets/hero/arti.png'
 import Slider from 'react-slick'
 import { motion } from 'framer-motion'
 
@@ -48,6 +51,18 @@ const ImageList = [
         image: image4,
         title: '70% off on all female products sale',
         description: 'Upgrade your style for less! Enjoy an unbelievable 70% discount on our entire range of women’s products.'
+    },
+    {
+        id: 5,
+        image: image5,
+        title: "Shop with Ease, Comfort, and Confidence!",
+        description: 'We’ve made shopping effortless and stress-free, so you can order from the comfort of your own space. Whether you’re at home, at work, or on the go, our seamless online platform allows you to browse, select, and purchase with ease.'
+    },
+    {
+        id: 6,
+        image: image7,
+        title: 'Stand Out with Unmatched Style',
+        description:' At our e-commerce store, we believe your style is your signature. That’s why we offer a carefully curated selection of products designed to elevate your look and set you apart from the crowd.'
     },
 ];
 

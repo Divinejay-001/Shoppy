@@ -10,6 +10,7 @@ import Suscribe from './components/subscribe/Suscribe';
 import Testimonial from './components/testimonial/Testimonial';
 import Footer from './components/footer/Footer';
 import Popup from './components/popup/Popup';
+import Shoes from './components/shoes/Shoes';
 function App() {
 const [orderPopup, setOrderPopup]=React.useState(false);
 
@@ -34,7 +35,8 @@ const handleOrderPopup = ()=>{
      <Top handleOrderPopup={handleOrderPopup}/>
      <Banner/>
      <Suscribe/>
-     <Product/>
+     {/* <Product/> */}
+     <Shoes handleOrderPopup={handleOrderPopup}/>
      <Testimonial/>
      <Footer/>
      <Popup  orderPopup={orderPopup} setOrderPopup={setOrderPopup}/>

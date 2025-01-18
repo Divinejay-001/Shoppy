@@ -64,7 +64,7 @@ md:grid-cols-3 gap-20 md:gap-5 place-items-center'>
             <div
             data-aos='zoom-in'
             className='rounded-2xl bg-white 
-            dark:bg-gray-800 hover:bg-black/70 
+            dark:bg-gray-800 hover:bg-tertiary/40 
             dark:hover:bg-primary hover:text-white
             relative shadow-2xl duration-300 group max-w-[300px] '> 
                 {/* img sec  */}

@@ -20,7 +20,7 @@ React.useEffect(()=> {
         }
     }, [theme])
   return (
-    <div className='relative '>
+    <div  className='relative '>
         <img src={lightPng} alt=""
         onClick={()=>setTheme(theme === "light" ? "dark" : "light")}
         className={`

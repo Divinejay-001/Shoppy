@@ -73,10 +73,10 @@ const Testimonial = () => {
         ]
     }
   return (
-    <div className='py-14 mb-0  '>
+    <div className='pb-24 lg:py-44 mb-0  '>
         <div className='container'>
  {/* header sec  */}
- <div className='text-center mt-8 max-w-[600px] lg:h-[200px] mx-auto'>
+ <div className='text-center mt-14 max-w-[600px] lg:h-[200px] mx-auto'>
     <p data-aos='fadeup' className='text-sm text-primary '>What Our Customers Say </p>
     <h1 data-aos='fadeup' className='text-3xl font-bold'>Testimonials</h1>
     <p data-aos='fadeup' className='text-xs text-gray-600  dark:text-gray-300'>

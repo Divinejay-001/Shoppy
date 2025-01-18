@@ -10,6 +10,7 @@ export default {
       colors: {
         primary: '#fea928',
         secondary: '#ed8900',
+        tertiary: '#D22DC9',
       },
      container: {
        center: true,
