@@ -162,7 +162,7 @@ and durability. Whether you're looking for casual sneakers,
         <div
         key={data.id} className='flex flex-col  shadow-xl
       py-8 px-6 mx-4 rounded-xl  dark:bg-gray-800
-      bg-primary/15 relative   dark:hover:bg-primary hover:bg-tertiary/40'>
+      bg-primary/15 relative   dark:hover:bg-tertiary/50 hover:bg-tertiary/40'>
 <div className='mb-0 pb-10 '>
 <img src={data.img} alt="" className='w-72 h-52 rounded-md pb-9
  object-cover '/>

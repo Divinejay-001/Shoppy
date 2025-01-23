@@ -11,12 +11,16 @@ import Testimonial from './components/testimonial/Testimonial';
 import Footer from './components/footer/Footer';
 import Popup from './components/popup/Popup';
 import Shoes from './components/shoes/Shoes';
+import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
+import Homepage from './components/pages/Homepage';
+import SignIn from './components/Signin';
+import Signup from './components/signup';
 function App() {
-const [orderPopup, setOrderPopup]=React.useState(false);
+// const [orderPopup, setOrderPopup]=React.useState(false);
 
-const handleOrderPopup = ()=>{
-  setOrderPopup(!orderPopup);
-}
+// const handleOrderPopup = ()=>{
+//   setOrderPopup(!orderPopup);
+// }
   React.useEffect(()=>{
     AOS.init({ 
       duration: 800,
@@ -29,17 +33,24 @@ const handleOrderPopup = ()=>{
   return (
     <div className='bg-white select-none dark:bg-gray-950 dark:text-white
     duration-200'>
-      <Navbar handleOrderPopup={handleOrderPopup}/>
-     <Hero handleOrderPopup={handleOrderPopup}/>
-     <Product/>
-     <Top handleOrderPopup={handleOrderPopup}/>
-     <Banner/>
-     <Suscribe/>
+      {/* <Navbar handleOrderPopup={handleOrderPopup}/> */}
+     {/* <Hero handleOrderPopup={handleOrderPopup}/> */}
      {/* <Product/> */}
-     <Shoes handleOrderPopup={handleOrderPopup}/>
-     <Testimonial/>
-     <Footer/>
-     <Popup  orderPopup={orderPopup} setOrderPopup={setOrderPopup}/>
+     {/* <Top handleOrderPopup={handleOrderPopup}/> */}
+     {/* <Banner/> */}
+     {/* <Suscribe/> */}
+     {/* <Product/> */}
+     {/* <Shoes handleOrderPopup={handleOrderPopup}/> */}
+     {/* <Testimonial/> */}
+     {/* <Footer/> */}
+     {/* <Popup  orderPopup={orderPopup} setOrderPopup={setOrderPopup}/> */}
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Homepage />} />
+      <Route path='/signin' element={<SignIn />} />
+      <Route path='/signup' element={<Signup />} />
+    </Routes>
+    </BrowserRouter>
     </div>
   )
 }

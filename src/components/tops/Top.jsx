@@ -32,29 +32,21 @@ const Top = ({handleOrderPopup}) => {
     <div>
         <div className='container pt-16   '>
 {/* header sec  */}
-<div 
+<div data-aos='fade-up'
 className='text-left mb-24  '>
-<motion.p
-variants={FadeUp(0.5)}
-initial='hidden'
-whileInView='visible'
+<p
+
 className='text-sm text-primary'>
     Top Rated Products For You
-</motion.p>
-<motion.h1
-variants={FadeUp(0.7)}
-initial='hidden'
-whileInView='visible'
+</p>
+<h1
+
 className='text-3xl font-bold'>
  Best   Products
-</motion.h1>
-<motion.p
-variants={FadeUp(0.9)}
-initial='hidden'
-whileInView='visible'
-className='text-sm text-gray-400'>
+</h1>
+<p className='text-sm text-gray-400'>
     Discover our top-rated products, thoughtfully designed to offer the perfect blend of style, comfort, and functionality, making them ideal for every occasion.
-    </motion.p>
+    </p>
 </div>
 {/* Body sec  */}
 <div className='grid grid-cols-1 sm:grid-cols-2 

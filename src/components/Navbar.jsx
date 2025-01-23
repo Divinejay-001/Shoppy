@@ -1,16 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Logo from '../assets/logo.png'
 import { IoMdSearch } from 'react-icons/io'
 import { FaCartShopping } from 'react-icons/fa6'
 import DarkMode from './DarkMode'
 import { FaCaretDown } from 'react-icons/fa'
+import { IoMdApps, IoMdClose,  } from "react-icons/io";
 import { list } from 'postcss'
+import { Link } from 'react-router-dom'
+import Responsivemenu from './responsive/Responsivemenu'
+import { GiHamburgerMenu } from 'react-icons/gi'
 
 const Menu = [
     {
         id: 1,
         name: 'Home',
-        link: '/home',
+        link: '/',
     },
     {
         id: 2,
@@ -53,6 +57,7 @@ const DropdownLinks =[
     },
     ]
 const Navbar = ({handleOrderPopup}) => {
+    const [open, setOpen]= useState(false);
   return (
     <div className='shadow-md  bg-white dark:bg-gray-900
     dark:text-white duration-200 relative z-40'>
@@ -61,12 +66,12 @@ const Navbar = ({handleOrderPopup}) => {
     <div className='container flex justify-between
     items-center '>
         <div>
-        <a href="#" className='font-bold
+        <Link to="/" className='font-bold
         text-2xl sm:text-3xl flex gap-2'>
             <img src={Logo} alt="" className='w-10
             ' />
             Shophere
-        </a>
+        </Link>
         </div> 
         {/* search bar  */}
         <div className='flex justify-between items-center
@@ -96,7 +101,7 @@ const Navbar = ({handleOrderPopup}) => {
     text-white py-1 px-4 rounded-full flex items-center
     gap-3 group'>
         <span
-        className='group-hover:block hidden transition-all duration-200'>
+        className='sm:group-hover:block hidden transition-all duration-200'>
             Order
             </span>
 <FaCartShopping
@@ -107,8 +112,18 @@ cursor-pointer' />
     <div>
         <DarkMode/>
     </div>
+    {/* Mobile Menu */}
+    <div className=' md:hidden ' onClick={()=>setOpen(!open)}> 
+    {open ? (
+            <IoMdClose className="text-4xl text-white" /> // Render close icon if open
+          ) : (
+            <GiHamburgerMenu className="text-4xl text-white" /> // Render app icon if closed
+          )}
+          <Responsivemenu open={open}/>
     </div>
-
+  
+    </div>
+    
 </div>
         </div>
         
@@ -116,16 +131,16 @@ cursor-pointer' />
         <div data-aos='zoom-in' className='flex justify-center'>
            <ul className='sm:flex hidden items-center
            gap-4'>
-            {
-                Menu.map((data)=>(
-                    <li >
-                        <a href={data.link}
-                        className='inline-block px-4 
-                        hover:text-primary duration-200'
-                    >{data.name}</a>
-                    
-                    </li>
-                ))}
+           <Link to='/' className='inline-block px-4 
+                        hover:text-primary duration-200'>Home</Link>
+           <Link to='/' className='inline-block px-4 
+                        hover:text-primary duration-200'>Top Rated</Link>
+           <Link to='/' className='inline-block px-4 
+                        hover:text-primary duration-200'>Mens Wear</Link>
+           <Link to='/signup' className='inline-block px-4 
+                        hover:text-primary duration-200'>Sign Up</Link>
+           <Link to='/signin' className='inline-block px-4 
+                        hover:text-primary duration-200'>Sign In</Link>
                 {/* simple dropdown and links  */}
                 <li className='group relative cursor-pointer
                 '> 
@@ -157,6 +172,16 @@ className=' transition-all  group-hover:rotate-180 duration-200
                 </li>
             </ul> 
         </div>
+        {/* {
+                Menu.map((data)=>(
+                    <li >
+                        <Link to={data.id}
+                        className='inline-block px-4 
+                        hover:text-primary duration-200'
+                    >{data.name}</Link>
+                                      
+                    </li>
+                ))} */}
     </div>
   )
 }
