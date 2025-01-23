@@ -115,9 +115,9 @@ cursor-pointer' />
     {/* Mobile Menu */}
     <div className=' md:hidden ' onClick={()=>setOpen(!open)}> 
     {open ? (
-            <IoMdClose className="text-4xl text-white" /> // Render close icon if open
+            <IoMdClose className="text-4xl dark:text-white text-primary" /> // Render close icon if open
           ) : (
-            <GiHamburgerMenu className="text-4xl text-white" /> // Render app icon if closed
+            <GiHamburgerMenu className="text-4xl dark:text-white text-secondary" /> // Render app icon if closed
           )}
           <Responsivemenu open={open}/>
     </div>
