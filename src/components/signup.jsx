@@ -36,7 +36,7 @@ overflow-hidden'>
             <input type="password" name="" placeholder='Confirm Password' id="" className='shadow-xl p-4 lg:py-1 py-1 lg:p-12 text-black  rounded-md' />
           </div>
           <div class="w-64 relative">
-  <label for="gender" class="block text-sm font-medium relative left-3 md:left-0 text-gray-200 mb-1 ">Gender</label>
+  <label for="gender" class="block text-sm font-medium relative left-3 md:left-0 text-gray-500 dark:text-gray-200 mb-1 ">Gender</label>
   <div class="relative text-black text-left">
     <select id="gender" name="gender" class="block  w-[207px] lg:w-[570px] py-1 px-1 relative left-5 md:left-0  rounded-md  border-gray-300 shadow-xl focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm appearance-none pr-10">
       <option value="" disabled selected className='text-black '>Select your gender</option>
