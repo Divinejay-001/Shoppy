@@ -8,7 +8,7 @@ const Signup = () => {
     <div className='  min-h-screen py-40'>
       <div className='container mx-auto'>
       <div className='absolute top-9 left-4'>
-             <Link to='/' className='font-bold text-white 
+             <Link to='/' className='font-bold text-black dark:text-white
              text-2xl sm:text-3xl flex gap-2'>
                  <img src={Logo} alt="" className='w-10
                  ' />
@@ -25,20 +25,20 @@ overflow-hidden'>
   <h2 className='text-sm relative top-4'>Fill Your Details</h2>
 </div>
 <div>
-  <form >
+  <form  className='pl-5'>
   <div className="flex flex-col gap-2 mt-6">
-          <div className="flex flex-col lg:flex-row gap-3 items-center w-full pb-4 text-black ">
-          
+          <div className="flex flex-col lg:flex-row gap-3 items-center w-full pb-4 text-black  ">
+         
              
-          <input type="text" name="" placeholder='Enter Username' className='py-1 p-12 text-left rounded-md' id="" />
-          <input type="email" name="" placeholder='Email' className='py-1 p-12 rounded-md' id="" />
+          <input type="text" name="" placeholder='Enter Username' className='shadow-xl py-1 p-12 text-left rounded-md' id="" />
+          <input type="email" name="" placeholder='Email' className='shadow-xl py-1 p-12 rounded-md' id="" />
           </div>
-          <input type="password" name="" placeholder='Password' id="" className='text-black mb-2 py-1 px-1 rounded-md' />
-          <input type="password" name="" placeholder='Confirm Password' id="" className='text-black py-1 px-1 rounded-md' />
+          <input type="password" name="" placeholder='Password' id="" className='shadow-xl text-black mb-2 py-1 px-1 rounded-md' />
+          <input type="password" name="" placeholder='Confirm Password' id="" className='shadow-xl text-black py-1 px-1 rounded-md' />
           <div class="w-64 relative">
-  <label for="gender" class="block text-sm font-medium text-gray-200 mb-1">Gender</label>
+  <label for="gender" class="block text-sm font-medium text-gray-200 mb-1 ">Gender</label>
   <div class="relative text-black text-left">
-    <select id="gender" name="gender" class="block  w-[280px] lg:w-[570px] py-1  rounded-md  border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm appearance-none pr-10">
+    <select id="gender" name="gender" class="block  w-[280px] lg:w-[570px] py-1  rounded-md  border-gray-300 shadow-xl focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm appearance-none pr-10">
       <option value="" disabled selected className='text-black '>Select your gender</option>
       <option value="male" className='text-black'>Male</option>
       <option value="female" className='text-black pb-8'>Female</option>
@@ -60,7 +60,7 @@ overflow-hidden'>
       
       </div>
       <div className='flex justify-center text-center items-center'>
-        <p className='pt-4 relative lg:left-32   text-sm '>Don't have an account?  <Link to='/signin' className='text-blue-900 hover:text-red-800 '>Sign Up</Link></p>
+        <p className='pt-4 relative lg:left-32   text-sm '>Already have an account?  <Link to='/signin' className='text-blue-900 hover:text-red-800 '>Sign In</Link></p>
       </div>
 
 </div>

@@ -65,7 +65,7 @@ const Navbar = ({handleOrderPopup}) => {
         <div className='bg-primary/40 py-2'>
     <div className='container flex justify-between
     items-center '>
-        <div>
+        <div className='relative right-2'>
         <Link to="/" className='font-bold
         text-2xl sm:text-3xl flex gap-2'>
             <img src={Logo} alt="" className='w-10
@@ -75,7 +75,7 @@ const Navbar = ({handleOrderPopup}) => {
         </div> 
         {/* search bar  */}
         <div className='flex justify-between items-center
-        gap-4 '>
+        md:gap-4 gap-2 '>
             <div className='relative group hidden sm:block'>
             <input 
             type="text" 
@@ -115,9 +115,9 @@ cursor-pointer' />
     {/* Mobile Menu */}
     <div className=' md:hidden ' onClick={()=>setOpen(!open)}> 
     {open ? (
-            <IoMdClose className="text-4xl dark:text-white text-primary" /> // Render close icon if open
+            <IoMdClose className="text-3xl dark:text-white text-primary" /> // Render close icon if open
           ) : (
-            <GiHamburgerMenu className="text-4xl dark:text-white text-secondary" /> // Render app icon if closed
+            <GiHamburgerMenu className="text-2xl dark:text-white text-secondary" /> // Render app icon if closed
           )}
           <Responsivemenu open={open}/>
     </div>
