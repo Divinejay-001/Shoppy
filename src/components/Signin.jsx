@@ -12,7 +12,7 @@ const SignIn = () => {
        <div className='absolute sm:right-10 right-0 container flex justify-between
          items-center  '>
              <div className=''>
-             <Link to='/' className='font-bold text-white dark:text-black
+             <Link to='/' className='font-bold text-black  
              text-2xl sm:text-3xl flex gap-2'>
                  <img src={Logo} alt="" className='w-10
                  ' />
@@ -27,8 +27,10 @@ const SignIn = () => {
       <div className='sm:w-[1/2]  pr-12 sm:pr-0 mx-auto   sm:m-0 lg:m-14 flex flex-col  sm:p-10 '>
       <div className='flex  items-center gap-3   pb- sm:pb-0  pt-40  lg:pt-14 '>
         <FaLock className='text-black font-bold text-2xl relative bottom-5 lg:bottom-8  sm:text-3xl'/>
-        <h1 className='text-black font-bold 
-        text-2xl pb-12 lg:pb-16 sm:0 sm:text-3xl'>Sign in to Shophere</h1>
+        <div className=''>
+          <h1 className='text-black font-bold
+          text-xl  pb-12 lg:pb-16 sm:0 sm:text-3xl'>Sign in to Shophere</h1>
+        </div>
       </div>
 <div className='w-full flex flex-col gap-8 sm:gap-4'>
     <p className='text-lg mb-2 
