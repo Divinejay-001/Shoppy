@@ -13,8 +13,13 @@ import Popup from './components/popup/Popup';
 import Shoes from './components/shoes/Shoes';
 import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
 import Homepage from './components/pages/Homepage';
-import SignIn from './components/Signin';
+import SignIn from './components/pages/Signin';
 import Signup from './components/signup';
+import { Toaster } from 'react-hot-toast';
+import ResetPassword from './components/pages/ResetPassword';
+import UserVerification from './components/pages/UserVerification';
+import Register from './components/pages/Register';
+import ForgotPasswordPage from './components/pages/ForgotPasswordPage';
 function App() {
 // const [orderPopup, setOrderPopup]=React.useState(false);
 
@@ -33,6 +38,7 @@ function App() {
   return (
     <div className='bg-white select-none dark:bg-gray-950 dark:text-white
     duration-200'>
+      <Toaster/>
       {/* <Navbar handleOrderPopup={handleOrderPopup}/> */}
      {/* <Hero handleOrderPopup={handleOrderPopup}/> */}
      {/* <Product/> */}
@@ -48,7 +54,11 @@ function App() {
     <Routes>
       <Route path='/' element={<Homepage />} />
       <Route path='/signin' element={<SignIn />} />
-      <Route path='/signup' element={<Signup />} />
+      {/* <Route path='/signup' element={<Signup />} /> */}
+      <Route path='/reset' element={<ResetPassword />} />
+      <Route path='/verifyUser' element={<UserVerification />} />
+      <Route path='/register' element={<Register />} />
+      <Route path='/forgotPass' element={<ForgotPasswordPage />} />
     </Routes>
     </BrowserRouter>
     </div>

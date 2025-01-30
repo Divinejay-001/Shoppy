@@ -1,6 +1,6 @@
 import React from 'react'
-import SigninImg from '../assets/signin.jpeg';
-import Logo from '../assets/logo.png'
+import SigninImg from '../../assets/signin.jpeg'
+import Logo from '../../assets/logo.png'
 import { FaLock } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
@@ -36,19 +36,21 @@ const SignIn = () => {
     <p className='text-lg mb-2 
     space-x-2'>Welcome Back! Please fill in your details.</p>
     <div className='grid gap-4'>
-      <input type="text" className='w-full px-4 py-4 sm:py-2  text-md border rounded-md shadow-xl
+      <input required type="text" className='w-full px-4 py-4 sm:py-2  text-md border rounded-md shadow-xl
       focus:outline-none focus:border-black' placeholder='Username' />
-      <input type="email" className='w-full px-4 py-4 sm:py-2 text-md border rounded-md shadow-lg
+      <input required type="email" className='w-full px-4 py-4 sm:py-2 text-md border rounded-md shadow-lg
       focus:outline-none focus:border-black' placeholder='Email Address' />
+      <input required type="password" className='w-full px-4 py-4 sm:py-2 text-md border rounded-md shadow-lg
+      focus:outline-none focus:border-black' placeholder='Password' />
 
     </div>
-    <div className='pt-3 group'>
+    <div className='pt-1 group'>
       <button type='submit' className='w-full
     hover:scale-105 duration-300 transition-all
      bg-primary group-hover:bg-tertiary/60
       group-hover:text-white px-2 py-2 rounded-md '>
       Sign In</button></div>
-    <p className='pt-0   text-sm sm:pl-10 pl-7'>Don't have an account?  <Link to='/signup' className='text-blue-900 hover:text-red-800 '>Sign Up</Link></p>
+    <p className='pt-0   text-sm sm:pl-10 pl-7'>Don't have an account?  <Link to='/register' className='text-blue-900 hover:text-red-800 '>Sign Up</Link></p>
 </div>
 
       </div>
