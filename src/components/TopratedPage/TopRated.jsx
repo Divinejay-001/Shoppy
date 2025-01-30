@@ -114,9 +114,9 @@ function TopRated() {
           <div className="flex justify-between items-center">
             <Link to='/' className='flex items-center gap-1'>
                 <img src={Logo} alt="Shophere Store" className="w-6 h-6" />
-                <h1 className="text-2xl font-bold text-gray-900">Shophere</h1>
+                <h1 className=" text-2xl font-bold text-gray-900">Shophere</h1>
             </Link>
-            <h1 className='uppercase text-gray-700 text-4xl text-bold font-serif'>Store</h1>
+            <h1 className='hidden md:block uppercase text-gray-700 text-2xl md:text-4xl text-bold font-serif'>Store</h1>
             <button
               onClick={() => setIsCartOpen(true)}
               className="relative  text-gray-600 hover:text-gray-900 hover:bg-gray-200 rounded-full p-2 "
