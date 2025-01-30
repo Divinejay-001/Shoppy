@@ -20,6 +20,7 @@ import ResetPassword from './components/pages/ResetPassword';
 import UserVerification from './components/pages/UserVerification';
 import Register from './components/pages/Register';
 import ForgotPasswordPage from './components/pages/ForgotPasswordPage';
+import TopRated from './components/TopratedPage/TopRated';
 function App() {
 // const [orderPopup, setOrderPopup]=React.useState(false);
 
@@ -59,6 +60,7 @@ function App() {
       <Route path='/verifyUser' element={<UserVerification />} />
       <Route path='/register' element={<Register />} />
       <Route path='/forgotPass' element={<ForgotPasswordPage />} />
+      <Route path='/topRated' element={<TopRated />} />
     </Routes>
     </BrowserRouter>
     </div>

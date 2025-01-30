@@ -1,0 +1,37 @@
+.card{
+    /* border: 1px solid red; */
+    position: relative;
+}
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+.card::after, .card::before{
+    /* --angle:0deg; */
+content: '';
+    position: absolute;
+    height: 120%;
+    width:  120%;
+    background-image: conic-gradient(from var(--angle), transparent 70%,  #54B502, red, #54B502);
+    /* background: red; */
+    top: 50%;
+    left: 50%;
+ translate: -50% -50%;
+ z-index: 1;
+ padding: 2px;
+ border-radius: 20px;
+ animation: 3s spin linear infinite;
+}
+.card::before{
+    filter: blur(1rem); 
+     opacity: 0.5;
+}
+@keyframes spin {
+    from{
+--angle: 0deg;
+    }
+    to{
+--angle: 360deg
+    }
+}

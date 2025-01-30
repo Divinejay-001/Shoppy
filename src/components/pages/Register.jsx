@@ -74,7 +74,7 @@ function Register() {
               />
             </div>
             <div className='mx-auto md:p-auto lg:pl-12'>
-                <GoogleOauth bgColors='tertiary'/>
+                <GoogleOauth bgColors='gray-100'/>
             </div>
 
             <button 
