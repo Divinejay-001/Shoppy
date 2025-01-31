@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaMailchimp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const ForgotPasswordPage = () => {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -76,10 +77,12 @@ const ForgotPasswordPage = () => {
                   </div>
 
                 </div>
-              <button type="submit"
-                  className="w-full mt-2 px-4 py-2 bg-tertiary text-white font-medium text-sm rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 duration-700">
-Verify
-              </button>
+              <Link to='/reset'>
+                <button type="submit"
+                    className="w-full mt-2 px-4 py-2 bg-tertiary text-white font-medium text-sm rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 duration-700">
+                Verify
+                </button>
+              </Link>
               </form>
             </motion.div>
           )}
