@@ -6,7 +6,7 @@ import { app} from '../firebase'
 import { AppContext } from '../context/AppContext'
 import { FaGoogle } from 'react-icons/fa'
 import Button from '../components/btn/Button'
-import Google from '/google.png'
+import Google from '../assets/google.png'
 
 
 const GoogleOauth = ({bgColors}) => {
@@ -48,25 +48,28 @@ const GoogleOauth = ({bgColors}) => {
         }
     }
   return (
-    <div className='text-gray-700 '>
-    <Button
-      onClick={handleClick}
-      text={isloading ? 'Signing in...' : 'Continue with Google'}
-      styles="w-[100%] border-2 border-gray-700 relative left-0 md:left-3
-        hover:scale-105 duration-300 transition-all
-        group-hover:bg-tertiary/60
-        border-red-50
-        group-hover:text-white px-6 py-2 rounded-md shadow-xl flex items-center justify-center space-x-2"
-      bgColors={bgColors}
-      disabled={isloading}
-    >
-      <img 
-        src={Google} 
-        className="w-5 h-5 relative z-30" 
-        alt="Google Logo" 
-      />
-      <span>{isloading ? 'Signing in...' : 'Continue with Google'}</span>
-    </Button>
+    <div className='text-gray-700'>
+       <div className='flex items-center '>
+         <img
+          src={Google}
+          className="w-5 h-5 relative z-30 left-16"
+          alt="Google Logo" 
+               />
+             <Button
+               onClick={handleClick}
+               text={isloading ? 'Signing in...' : 'Continue with Google'}
+               styles="w-[100%] border-2 border-gray-700 relative left-0 md:left-3
+          hover:scale-105 duration-300 transition-all
+          group-hover:bg-tertiary/60
+          border-red-50
+          group-hover:text-white px-6 py-2 rounded-md shadow-xl flex items-center justify-center space-x-2"
+               bgColors={bgColors}
+               disabled={isloading}
+             >
+              
+               <span>{isloading ? 'Signing in...' : 'Continue with Google'}</span>
+             </Button>
+       </div>
   </div>
   
    
