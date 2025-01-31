@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { ShoppingCart, X } from 'lucide-react';
-import Logo from '../../assets/logo.png'
 import { Link } from 'react-router-dom';
+import logo from '../../assets/logo.png'
+// Curated list of real Unsplash product images
 const products = [
   {
     id: 1,
@@ -27,7 +28,62 @@ const products = [
     image: "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=300&h=300&fit=crop",
     description: "Comfortable office chair with lumbar support"
   },
-  // ... continuing with more products
+  {
+    id: 4,
+    name: "Professional DSLR Camera",
+    price: 899.99,
+    category: "Electronics",
+    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=300&h=300&fit=crop",
+    description: "High-end digital camera for professional photography"
+  },
+  {
+    id: 5,
+    name: "Minimalist Desk Lamp",
+    price: 79.99,
+    category: "Home & Garden",
+    image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=300&h=300&fit=crop",
+    description: "Modern LED desk lamp with adjustable brightness"
+  },
+  {
+    id: 6,
+    name: "Leather Messenger Bag",
+    price: 149.99,
+    category: "Accessories",
+    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop",
+    description: "Handcrafted leather bag for professionals"
+  },
+  {
+    id: 7,
+    name: "Wireless Gaming Mouse",
+    price: 89.99,
+    category: "Electronics",
+    image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=300&h=300&fit=crop",
+    description: "High-precision gaming mouse with RGB lighting"
+  },
+  {
+    id: 8,
+    name: "Mechanical Keyboard",
+    price: 129.99,
+    category: "Electronics",
+    image: "https://images.unsplash.com/photo-1595225476474-87563907a212?w=300&h=300&fit=crop",
+    description: "RGB mechanical keyboard with Cherry MX switches"
+  },
+  {
+    id: 9,
+    name: "Smart Home Speaker",
+    price: 179.99,
+    category: "Electronics",
+    image: "https://images.unsplash.com/photo-1589492477829-5e65395b66cc?w=300&h=300&fit=crop",
+    description: "Voice-controlled smart speaker with premium sound"
+  },
+  {
+    id: 10,
+    name: "Fitness Tracker",
+    price: 79.99,
+    category: "Electronics",
+    image: "https://images.unsplash.com/photo-1557438159-51eec7a6c9e8?w=300&h=300&fit=crop",
+    description: "Advanced fitness tracking with heart rate monitoring"
+  },
   {
     id: 98,
     name: "Vintage Leather Wallet",
@@ -53,14 +109,48 @@ const products = [
     description: "20000mAh high-capacity power bank"
   }
 ].concat(
-  // Generate additional products programmatically
-  Array.from({ length: 94 }, (_, i) => ({
-    id: i + 4,
-    name: `Product ${i + 4}`,
+  [
+    // Electronics
+    "https://images.unsplash.com/photo-1546435770-a3e426bf472b", // Gaming Console
+    "https://images.unsplash.com/photo-1586953208448-b95a79798f07", // Laptop
+    "https://images.unsplash.com/photo-1585298723682-7115561c51b7", // Tablet
+    "https://images.unsplash.com/photo-1512054502232-10a0a035d672", // Camera Lens
+    "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb", // Smartwatch
+    
+    // Home & Garden
+    "https://images.unsplash.com/photo-1540932239986-30128078f3c5", // Living Room
+    "https://images.unsplash.com/photo-1567225557594-88d73e55f2cb", // Kitchen Appliance
+    "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92", // Garden Tools
+    "https://images.unsplash.com/photo-1524758631624-e2822e304c36", // Furniture
+    "https://images.unsplash.com/photo-1513694203232-719a280e022f", // Home Decor
+    
+    // Fashion
+    "https://images.unsplash.com/photo-1560343090-f0409e92791a", // Watch
+    "https://images.unsplash.com/photo-1591561954557-26941169b49e", // Shoes
+    "https://images.unsplash.com/photo-1556306535-0f09a537f0a3", // Handbag
+    "https://images.unsplash.com/photo-1582142306909-195724d33ffc", // Jewelry
+    "https://images.unsplash.com/photo-1576566588028-4147f3842f27", // Sunglasses
+    
+    // Sports & Outdoors
+    "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2", // Fitness Equipment
+    "https://images.unsplash.com/photo-1530549387789-4c1017266635", // Camping Gear
+    "https://images.unsplash.com/photo-1517836357463-d25dfeac3438", // Bicycle
+    "https://images.unsplash.com/photo-1540539234-c14a20fb7c7b", // Running Shoes
+    "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b", // Yoga Mat
+    
+    // Beauty & Personal Care
+    "https://images.unsplash.com/photo-1571781926291-c477ebfd024b", // Skincare
+    "https://images.unsplash.com/photo-1596462502278-27bfdc403348", // Makeup
+    "https://images.unsplash.com/photo-1585232004423-244e0e6904e3", // Hair Care
+    "https://images.unsplash.com/photo-1556228578-0d85b1a4d571", // Perfume
+    "https://images.unsplash.com/photo-1556228720-195a672e8a03", // Beauty Tools
+  ].map((imageUrl, index) => ({
+    id: index + 11,
+    name: `Product ${index + 11}`,
     price: Math.round(Math.random() * 200 + 9.99),
-    category: ['Electronics', 'Clothing', 'Home & Garden', 'Sports', 'Books'][Math.floor(Math.random() * 5)],
-    image: `https://images.unsplash.com/photo-${1550000000000 + i}?w=300&h=300&fit=crop`,
-    description: `Description for Product ${i + 4}`
+    category: ['Electronics', 'Home & Garden', 'Fashion', 'Sports & Outdoors', 'Beauty & Personal Care'][Math.floor(Math.random() * 5)],
+    image: `${imageUrl}?w=300&h=300&fit=crop`,
+    description: `High-quality product with premium features`
   }))
 );
 
@@ -107,21 +197,22 @@ function TopRated() {
   const cartTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
-    <div className="min-h-screen dark:bg-gray-950 bg-gray-100">
+    <div className="min-h-screen bg-gray-100">
       {/* Header */}
-      <header className="bg-white dark:bg-tertiary/80 dark:text-gray-200 shadow-md">
+      <header className="bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
-            <Link to='/' className='flex items-center gap-1'>
-                <img src={Logo} alt="Shophere Store" className="w-6 h-6" />
-                <h1 className=" text-2xl font-bold text-gray-900">Shophere</h1>
+           
+            <Link to="/" className="text-2xl flex justify-center items-center gap-1 font-bold text-gray-900 text-center">
+             <img src={logo} className='w-6 h-6'/>
+              Shophere
             </Link>
-            <h1 className='hidden md:block uppercase text-gray-700 text-2xl md:text-4xl text-bold font-serif'>Store</h1>
+            
             <button
               onClick={() => setIsCartOpen(true)}
-              className="relative  text-gray-600 hover:text-gray-900 hover:bg-gray-200 rounded-full p-2 "
+              className="relative text-gray-600 hover:text-gray-900"
             >
-              <ShoppingCart className="w-6 h-6 " />
+              <ShoppingCart className="w-6 h-6" />
               {cart.length > 0 && (
                 <span className="absolute -top-1 -right-1 bg-blue-600 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">
                   {cart.reduce((sum, item) => sum + item.quantity, 0)}
