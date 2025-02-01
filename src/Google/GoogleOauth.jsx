@@ -52,7 +52,7 @@ const GoogleOauth = ({bgColors}) => {
        <div className='flex items-center '>
          <img
           src={Google}
-          className="w-5 h-5 relative z-30 left-16"
+          className="w-5 h-5 relative z-30 left-8 md:left-12 lg:left-16 "
           alt="Google Logo" 
                />
              <Button

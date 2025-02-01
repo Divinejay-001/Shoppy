@@ -7,6 +7,7 @@ import toast from 'react-hot-toast';
 import { useState, useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 import SignUpbtn from '../btn/SignUpbtn';
+
 function Register() {
   const {setUserInfo, userInfo} = useContext(AppContext); 
 
@@ -212,9 +213,9 @@ function Register() {
 
             <p className='text-center text-gray-600'>
               Already have an account? 
-              <a href="/signin" className='text-blue-900 hover:text-blue-700 ml-1 font-medium'>
+      <Link to='/signin' className='text-blue-900 hover:text-blue-700 ml-1 font-medium'>
                 Sign In
-              </a>
+              </Link>
             </p>
           </form>
         </div>
