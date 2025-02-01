@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaMailchimp } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { Mail } from "lucide-react";
 const ForgotPasswordPage = () => {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -21,24 +22,27 @@ const ForgotPasswordPage = () => {
         className="w-full max-w-md p-4 shadow-2xl rounded-2xl bg-white"
       >
         <div>
-          <h2 className="text-2xl font-bold text-center mb-4 text-gray-800">
-            Forgot Password
-          </h2>
+          
           {!submitted ? (
             <form onSubmit={handleSubmit} className="space-y-4">
+              <h2 className="text-2xl font-bold text-center mb-4 text-gray-800">
+            Forgot Password
+          </h2>
+          <p className="text-center"> You will receive an otp shortly</p>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  Email Address
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                  required
-                />
+                
+                <div className="flex justify-center items-center">
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="mt-1 block w-full px-3 py-2  border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    required
+                  />
+                  <Mail className="relative right-7"/>
+                </div>
               </div>
               <button
                 type="submit"
