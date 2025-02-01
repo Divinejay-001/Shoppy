@@ -30,7 +30,7 @@ function App() {
 // }
   React.useEffect(()=>{
     AOS.init({ 
-      duration: 800,
+      duration: 500,
       offset:100,
       easing: 'ease-in-sine',
       delay: 100

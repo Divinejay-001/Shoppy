@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ShoppingCart, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png'
-// Curated list of real Unsplash product images
+
 const products = [
   {
     id: 1,
@@ -10,7 +10,8 @@ const products = [
     price: 199.99,
     category: "Electronics",
     image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop",
-    description: "High-quality wireless headphones with noise cancellation"
+    description: "High-quality wireless headphones with noise cancellation",
+    shortDescription: "Wireless noise-canceling headphones"
   },
   {
     id: 2,
@@ -18,7 +19,8 @@ const products = [
     price: 299.99,
     category: "Electronics",
     image: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=300&h=300&fit=crop",
-    description: "Advanced smartwatch with health tracking"
+    description: "Advanced smartwatch with health tracking",
+    shortDescription: "Smartwatch with health tracking"
   },
   {
     id: 3,
@@ -26,7 +28,8 @@ const products = [
     price: 249.99,
     category: "Furniture",
     image: "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=300&h=300&fit=crop",
-    description: "Comfortable office chair with lumbar support"
+    description: "Comfortable office chair with lumbar support",
+    shortDescription: "Comfortable ergonomic chair"
   },
   {
     id: 4,
@@ -34,7 +37,8 @@ const products = [
     price: 899.99,
     category: "Electronics",
     image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=300&h=300&fit=crop",
-    description: "High-end digital camera for professional photography"
+    description: "High-end digital camera for professional photography",
+    shortDescription: "High-end DSLR camera"
   },
   {
     id: 5,
@@ -42,7 +46,8 @@ const products = [
     price: 79.99,
     category: "Home & Garden",
     image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=300&h=300&fit=crop",
-    description: "Modern LED desk lamp with adjustable brightness"
+    description: "Modern LED desk lamp with adjustable brightness",
+    shortDescription: "Sleek LED desk lamp"
   },
   {
     id: 6,
@@ -50,7 +55,8 @@ const products = [
     price: 149.99,
     category: "Accessories",
     image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop",
-    description: "Handcrafted leather bag for professionals"
+    description: "Handcrafted leather bag for professionals",
+    shortDescription: "Stylish leather messenger bag"
   },
   {
     id: 7,
@@ -58,7 +64,8 @@ const products = [
     price: 89.99,
     category: "Electronics",
     image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=300&h=300&fit=crop",
-    description: "High-precision gaming mouse with RGB lighting"
+    description: "High-precision gaming mouse with RGB lighting",
+    shortDescription: "Wireless RGB gaming mouse"
   },
   {
     id: 8,
@@ -66,15 +73,17 @@ const products = [
     price: 129.99,
     category: "Electronics",
     image: "https://images.unsplash.com/photo-1595225476474-87563907a212?w=300&h=300&fit=crop",
-    description: "RGB mechanical keyboard with Cherry MX switches"
+    description: "RGB mechanical keyboard with Cherry MX switches",
+    shortDescription: "Mechanical RGB keyboard"
   },
   {
     id: 9,
-    name: "Smart Home Speaker",
+    name: "Smart Phones",
     price: 179.99,
     category: "Electronics",
     image: "https://images.unsplash.com/photo-1589492477829-5e65395b66cc?w=300&h=300&fit=crop",
-    description: "Voice-controlled smart speaker with premium sound"
+    description: "Voice-controlled smart speaker with premium sound",
+    shortDescription: "Smart assistant speaker"
   },
   {
     id: 10,
@@ -82,77 +91,211 @@ const products = [
     price: 79.99,
     category: "Electronics",
     image: "https://images.unsplash.com/photo-1557438159-51eec7a6c9e8?w=300&h=300&fit=crop",
-    description: "Advanced fitness tracking with heart rate monitoring"
+    description: "Advanced fitness tracking with heart rate monitoring",
+    shortDescription: "Fitness tracker with heart rate monitor"
   },
   {
-    id: 98,
-    name: "Vintage Leather Wallet",
-    price: 49.99,
-    category: "Accessories",
-    image: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=300&h=300&fit=crop",
-    description: "Handcrafted genuine leather wallet"
+    "id": 11,
+    "name": "Headsets",
+    "price": 499.99,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=300&h=300&fit=crop",
+    "description": "High-quality gaming headsets with surround sound."
   },
   {
-    id: 99,
-    name: "Smart Home Security Camera",
-    price: 129.99,
-    category: "Electronics",
-    image: "https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?w=300&h=300&fit=crop",
-    description: "HD security camera with night vision"
+    "id": 12,
+    "name": "Apple Gadgets",
+    "price": 1299.99,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300&h=300&fit=crop",
+    "description": "Premium Apple devices with cutting-edge technology."
   },
   {
-    id: 100,
-    name: "Portable Power Bank",
-    price: 39.99,
-    category: "Electronics",
-    image: "https://images.unsplash.com/photo-1609592424825-fe0d0f3d0ce8?w=300&h=300&fit=crop",
-    description: "20000mAh high-capacity power bank"
+    "id": 13,
+    "name": "Premium Headset",
+    "price": 649.99,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1585298723682-7115561c51b7?w=300&h=300&fit=crop",
+    "description": "Professional-grade headset with crystal-clear audio."
+  },
+  {
+    "id": 14,
+    "name": "Premium Tablet",
+    "price": 899.99,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1512054502232-10a0a035d672?w=300&h=300&fit=crop",
+    "description": "High-performance tablet for work and entertainment."
+  },
+  {
+    "id": 15,
+    "name": "Smart Watch Elite",
+    "price": 349.99,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=300&h=300&fit=crop",
+    "description": "Luxury smartwatch with advanced health tracking."
+  },
+  {
+    "id": 16,
+    "name": "Modern Lamp Set",
+    "price": 1499.99,
+    "category": "Home & Garden",
+    "image": "https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=300&h=300&fit=crop",
+    "description": "Sleek, modern lamps to brighten up your space."
+  },
+  {
+    "id": 17,
+    "name": "Beautiful Vases",
+    "price": 199.99,
+    "category": "Home & Garden",
+    "image": "https://images.unsplash.com/photo-1567225557594-88d73e55f2cb?w=300&h=300&fit=crop",
+    "description": "Elegant vases to enhance your home decor."
+  },
+  {
+    "id": 18,
+    "name": "Premium Furniture",
+    "price": 129.99,
+    "category": "Home & Garden",
+    "image": "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=300&h=300&fit=crop",
+    "description": "Stylish and durable furniture for modern homes."
+  },
+  {
+    "id": 19,
+    "name": "Designer Dining Set",
+    "price": 899.99,
+    "category": "Home & Garden",
+    "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=300&h=300&fit=crop",
+    "description": "Elegant dining set for a sophisticated dining experience."
+  },
+  {
+    "id": 20,
+    "name": "Luxury Furniture Suite",
+    "price": 299.99,
+    "category": "Home & Garden",
+    "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=300&h=300&fit=crop",
+    "description": "Premium luxury furniture for an upscale look."
+  },
+  {
+    "id": 21,
+    "name": "Luxury Chronograph Shoe",
+    "price": 599.99,
+    "category": "Fashion",
+    "image": "https://images.unsplash.com/photo-1560343090-f0409e92791a?w=300&h=300&fit=crop",
+    "description": "Elegant luxury shoes with a stylish chronograph design."
+  },
+  {
+    "id": 22,
+    "name": "Designer Bag",
+    "price": 159.99,
+    "category": "Fashion",
+    "image": "https://images.unsplash.com/photo-1591561954557-26941169b49e?w=300&h=300&fit=crop",
+    "description": "Chic and spacious designer handbag for all occasions."
+  },
+  {
+    "id": 23,
+    "name": "Premium Leather Cap",
+    "price": 399.99,
+    "category": "Fashion",
+    "image": "https://images.unsplash.com/photo-1556306535-0f09a537f0a3?w=300&h=300&fit=crop",
+    "description": "High-quality leather cap with a sleek and modern design."
+  },
+  {
+    "id": 24,
+    "name": "Diamond Pendant Necklace",
+    "price": 999.99,
+    "category": "Fashion",
+    "image": "https://images.unsplash.com/photo-1582142306909-195724d33ffc?w=300&h=300&fit=crop",
+    "description": "18K gold necklace featuring a stunning diamond pendant."
+  },
+  {
+    "id": 25,
+    "name": "Designer Shirts",
+    "price": 249.99,
+    "category": "Fashion",
+    "image": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=300&h=300&fit=crop",
+    "description": "Stylish designer shirts crafted from premium fabrics."
+  },
+  {
+    "id": 26,
+    "name": "Pro Treadmill",
+    "price": 1499.99,
+    "category": "Sports & Outdoors",
+    "image": "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=300&h=300&fit=crop",
+    "description": "High-end treadmill with advanced workout tracking."
+  },
+  {
+    "id": 27,
+    "name": "Swimming Kit",
+    "price": 399.99,
+    "category": "Sports & Outdoors",
+    "image": "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=300&h=300&fit=crop",
+    "description": "Complete swimming gear set for professionals and beginners."
+  },
+  {
+    "id": 28,
+    "name": "Treadmill",
+    "price": 899.99,
+    "category": "Sports & Outdoors",
+    "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=300&h=300&fit=crop",
+    "description": "Compact and powerful treadmill for home workouts."
+  },
+  {
+    "id": 29,
+    "name": "Premium Running Shoes",
+    "price": 149.99,
+    "category": "Sports & Outdoors",
+    "image": "https://images.unsplash.com/photo-1540539234-c14a20fb7c7b?w=300&h=300&fit=crop",
+    "description": "High-performance running shoes with superior comfort."
+  },
+  {
+    "id": 30,
+    "name": "Pro Yoga Set",
+    "price": 89.99,
+    "category": "Sports & Outdoors",
+    "image": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=300&h=300&fit=crop",
+    "description": "Complete yoga set with premium mat and accessories."
+  },
+  {
+    "id": 31,
+    "name": "Luxury Skincare Set",
+    "price": 199.99,
+    "category": "Beauty & Personal Care",
+    "image": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=300&h=300&fit=crop",
+    "description": "A complete skincare set for radiant and healthy skin."
+  },
+  {
+    "id": 32,
+    "name": "Professional Makeup Kit",
+    "price": 299.99,
+    "category": "Beauty & Personal Care",
+    "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&h=300&fit=crop",
+    "description": "Comprehensive makeup kit with high-quality cosmetics."
+  },
+  {
+    "id": 33,
+    "name": "Shoe",
+    "price": 149.99,
+    "category": "Fashion",
+    "image": "https://images.unsplash.com/photo-1585232004423-244e0e6904e3?w=300&h=300&fit=crop",
+    "description": "Stylish and comfortable shoes for any occasion."
+  },
+  {
+    "id": 34,
+    "name": "Nice Fragrance Cream",
+    "price": 129.99,
+    "category": "Beauty & Personal Care",
+    "image": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300&h=300&fit=crop",
+    "description": "Moisturizing cream infused with a delightful fragrance."
+  },
+  {
+    "id": 35,
+    "name": "Pro Beauty Tools Set",
+    "price": 199.99,
+    "category": "Beauty & Personal Care",
+    "image": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=300&h=300&fit=crop",
+    "description": "High-end beauty tools set for professional styling."
   }
-].concat(
-  [
-    // Electronics
-    "https://images.unsplash.com/photo-1546435770-a3e426bf472b", // Gaming Console
-    "https://images.unsplash.com/photo-1586953208448-b95a79798f07", // Laptop
-    "https://images.unsplash.com/photo-1585298723682-7115561c51b7", // Tablet
-    "https://images.unsplash.com/photo-1512054502232-10a0a035d672", // Camera Lens
-    "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb", // Smartwatch
-    
-    // Home & Garden
-    "https://images.unsplash.com/photo-1540932239986-30128078f3c5", // Living Room
-    "https://images.unsplash.com/photo-1567225557594-88d73e55f2cb", // Kitchen Appliance
-    "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92", // Garden Tools
-    "https://images.unsplash.com/photo-1524758631624-e2822e304c36", // Furniture
-    "https://images.unsplash.com/photo-1513694203232-719a280e022f", // Home Decor
-    
-    // Fashion
-    "https://images.unsplash.com/photo-1560343090-f0409e92791a", // Watch
-    "https://images.unsplash.com/photo-1591561954557-26941169b49e", // Shoes
-    "https://images.unsplash.com/photo-1556306535-0f09a537f0a3", // Handbag
-    "https://images.unsplash.com/photo-1582142306909-195724d33ffc", // Jewelry
-    "https://images.unsplash.com/photo-1576566588028-4147f3842f27", // Sunglasses
-    
-    // Sports & Outdoors
-    "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2", // Fitness Equipment
-    "https://images.unsplash.com/photo-1530549387789-4c1017266635", // Camping Gear
-    "https://images.unsplash.com/photo-1517836357463-d25dfeac3438", // Bicycle
-    "https://images.unsplash.com/photo-1540539234-c14a20fb7c7b", // Running Shoes
-    "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b", // Yoga Mat
-    
-    // Beauty & Personal Care
-    "https://images.unsplash.com/photo-1571781926291-c477ebfd024b", // Skincare
-    "https://images.unsplash.com/photo-1596462502278-27bfdc403348", // Makeup
-    "https://images.unsplash.com/photo-1585232004423-244e0e6904e3", // Hair Care
-    "https://images.unsplash.com/photo-1556228578-0d85b1a4d571", // Perfume
-    "https://images.unsplash.com/photo-1556228720-195a672e8a03", // Beauty Tools
-  ].map((imageUrl, index) => ({
-    id: index + 11,
-    name: `Product ${index + 11}`,
-    price: Math.round(Math.random() * 200 + 9.99),
-    category: ['Electronics', 'Home & Garden', 'Fashion', 'Sports & Outdoors', 'Beauty & Personal Care'][Math.floor(Math.random() * 5)],
-    image: `${imageUrl}?w=300&h=300&fit=crop`,
-    description: `High-quality product with premium features`
-  }))
-);
+ 
+];
 
 function TopRated() {
   const [cart, setCart] = useState([]);
@@ -204,7 +347,7 @@ function TopRated() {
           <div className="flex justify-between items-center">
            
             <Link to="/" className="text-2xl flex justify-center items-center gap-1 font-bold text-gray-900 text-center">
-             <img src={logo} className='w-6 h-6'/>
+             <img src={logo} className="w-6 h-6" alt="Logo"/>
               Shophere
             </Link>
             

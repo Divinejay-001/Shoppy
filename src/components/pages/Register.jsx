@@ -3,7 +3,100 @@ import { Mail, Lock, ArrowRight, User } from 'lucide-react';
 import GoogleOauth from '../../Google/GoogleOauth';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo.png';
+import toast from 'react-hot-toast';
+import { useState, useContext } from 'react';
+import { AppContext } from '../../context/AppContext';
+import SignUpbtn from '../btn/SignUpbtn';
 function Register() {
+  const {setUserInfo, userInfo} = useContext(AppContext); 
+
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    // gender: '',
+    // phone_number: '',
+    password: '',
+    confirmPassword: '',
+  });
+
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+
+  const handleInputChange = (field, value) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+    setErrors((prev) => ({ ...prev, [field]: '' })); // Clear error for that field
+  };
+  
+
+  const validate = () => {
+    const errors = {};
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+    if (!formData.username.trim()) errors.username = 'Username is required';
+    if (!emailRegex.test(formData.email)) errors.email = 'Invalid email address';
+    // if (!formData.gender) errors.gender = 'Please select your gender';
+    // if (!formData.phone_number.trim()) errors.phone_number = 'Phone number is required';
+    if (formData.password.length < 8)
+      errors.password = 'Password must be at least 8 characters long';
+    if (formData.password !== formData.confirmPassword)
+      errors.confirmPassword = 'Passwords do not match';
+  
+    console.log(errors); // Log errors to debug
+    return errors;
+  };
+  
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const validationErrors = validate();
+
+    // Set only if there are errors
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors); 
+      return;
+    }
+    
+
+    setLoading(true);
+    setErrors({});
+
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/signup`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          username: formData.username,
+          email: formData.email,
+          // gender: formData.gender,
+          // phone_number: formData.phone_number,
+          password: formData.password,
+        }),
+      });
+
+      const data = await response.json()
+      console.log('data', data);
+
+      if(!data.success){        
+        toast.error(data.message);
+        throw new Error(data.message || 'Something went wrong');
+      } 
+      
+      toast.success(data?.message);
+      setUserInfo({name: 'Moses', age: 40})
+      setFormData({
+        username: '',
+        email: '',
+        // gender: '',
+        // phone_number: '',
+        password: '',
+        confirmPassword: '',
+      });
+    } catch (error) {
+      setErrors({ general: error.message });
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <div className='bg-gray-100 text-black min-h-screen flex'>
       <div className='hidden sm:block relative w-1/2'>
@@ -34,7 +127,7 @@ function Register() {
           </a>
         </div>
 
-        <div className='max-w-md w-full mx-auto'>
+        <div data-aos='zoom-in' className='max-w-md w-full mx-auto'>
           <div className='flex items-center gap-3 mb-8'>
             <Lock className='text-black text-3xl'/>
             <h1 className='text-black font-bold text-2xl md:text-3xl'>
@@ -42,48 +135,80 @@ function Register() {
             </h1>
           </div>
 
-          <div className='space-y-6'>
+          <form  
+                    onSubmit={handleSubmit}
+                    autoComplete="new" 
+          className='space-y-6'>
             <p className='text-lg text-gray-600'>
               Join Shophere today! Please fill in your details.
             </p>
-            
+            {errors.general && (
+            <p className="text-red-600 text-center">{errors.general}</p>
+          )}
             <div className='space-y-4'>
               <input 
                 required 
                 type="text" 
                 className='w-full px-4 py-2 text-md border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent' 
-                placeholder='Username' 
+                placeholder='Username'
+                value={formData.username} 
+                onChange={(e) => handleInputChange('username', e.target.value)}
               />
+               {errors.username && (
+                  <p className="text-red-600 text-sm">{errors.username}</p>
+                )}
               <input 
                 required 
                 type="email" 
                 className='w-full px-4 py-2 text-md border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent' 
                 placeholder='Email Address' 
+                value={formData.email}
+                onChange={(e) => handleInputChange('email', e.target.value)}
               />
+              {errors.email && (
+                  <p className="text-red-600 text-sm">{errors.email}</p>
+                )}
               <input 
                 required 
                 type="password" 
                 className='w-full px-4 py-2 text-md border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent' 
-                placeholder='Password' 
+                placeholder='Password'
+                value={formData.password}
+                onChange={(e) => handleInputChange('password', e.target.value)} 
               />
+                {errors.password && (
+                  <p className="text-red-600 text-sm">{errors.password}</p>
+                )}
               <input 
                 required 
                 type="password" 
                 className='w-full px-4 py-2 text-md border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent' 
                 placeholder='Confirm Password' 
+                value={formData.confirmPassword}
+                onChange={(e) => handleInputChange('confirmPassword', e.target.value)}
               />
+               {errors.confirmPassword && (
+                  <p className="text-red-600 text-sm">{errors.confirmPassword}</p>
+                )}
             </div>
             <div className='mx-auto md:p-auto lg:pl-12'>
                 <GoogleOauth bgColors='gray-100'/>
             </div>
 
-            <button 
+            <SignUpbtn
+                text={loading ? 'Signing Up...' : 'Get Started'}
+                disabled={loading}
+                />
+
+            {/* <button 
+            disabled={loading}
+            
               type='submit' 
               className='w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800 transform hover:scale-[1.02] transition-all duration-200 flex items-center justify-center gap-2'
             >
               <span>Create Account</span>
               <ArrowRight className="w-5 h-5" />
-            </button>
+            </button> */}
 
             <p className='text-center text-gray-600'>
               Already have an account? 
@@ -91,7 +216,7 @@ function Register() {
                 Sign In
               </a>
             </p>
-          </div>
+          </form>
         </div>
       </div>
     </div>
