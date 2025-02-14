@@ -8,28 +8,28 @@ const Transition = (OgComponent) => {
       {/* Slide In */}
       <motion.div
         className="fixed inset-0 bg-gradient-to-br 
-                    transform-gpu flex items-center justify-center z-50 
-                     "
+                    transform-gpu flex items-center justify-center z-50"
         initial={{ scaleY: 0}}
         animate={{ scaleY: 0 }}
         exit={{ scaleY: 1}}
         transition={{ 
-          duration: 1.2, 
-          
+          duration: 1, 
+          ease: [0.22, 1, 0.36, 1],
+          delay: 0.1 
         }}
-        
       >
+
 
         <div className="relative">
           <motion.h1 
             className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text 
-                       bg-gradient-to-r from-white via-gray-200 to-black
+                       bg-gradient-to-r from-white via-gray-200 to-gray-400
                        tracking-tight z-50"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{  duration: 0 }}
+            transition={{ delay: 0.1, duration: 0.8 }}
           >
-            Shophere
+            ShopHere
           </motion.h1>
           <motion.div 
             className="absolute -inset-1 blur-lg bg-gradient-to-r from-white/20 to-transparent 
@@ -43,7 +43,7 @@ const Transition = (OgComponent) => {
 
       {/* Slide Out */}
       <motion.div
-        className="fixed inset-0 bg-gradient-to-br from-primary via-tertiary to-secondary 
+        className="fixed inset-0 bg-gradient-to-br from-primary via-tertiary to-green-600 
                     transform-gpu flex items-center justify-center z-50"
         initial={{ clipPath: 'inset(0 0 0 0)' }}
         animate={{ clipPath: 'inset(100% 0 0 0)' }}
@@ -61,9 +61,9 @@ const Transition = (OgComponent) => {
                        tracking-tight"
             initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            Shophere
+            ShopHere
           </motion.h1>
           <motion.div 
             className="absolute -inset-1 blur-lg bg-gradient-to-r from-white to-transparent 

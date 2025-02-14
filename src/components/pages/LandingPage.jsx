@@ -3,6 +3,7 @@ import Navbar from '../Navbar'
 import { Link } from 'react-router-dom'
 import Logo from '../../assets/logo.png'
 import { ArrowRight } from 'lucide-react'
+import Transition from '../../Transiton'
 const LandingPage = () => {
   return (
     <div className='overflow-hidden '>
@@ -46,4 +47,4 @@ const LandingPage = () => {
   )
 }
 
-export default LandingPage
+export default  Transition(LandingPage);
