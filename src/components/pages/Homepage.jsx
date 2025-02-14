@@ -9,6 +9,7 @@ import Testimonial from '../testimonial/Testimonial'
 import Footer from '../footer/Footer'
 import Banner from '../Banner/Banner'
 import Popup from '../popup/Popup'
+import Transiton from '../../Transiton'
 
 const Homepage = () => {
   const [orderPopup, setOrderPopup]=React.useState(false);
@@ -32,4 +33,4 @@ const Homepage = () => {
   )
 }
 
-export default Homepage
+export default Transiton(Homepage) 

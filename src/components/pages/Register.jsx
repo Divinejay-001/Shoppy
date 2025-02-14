@@ -7,6 +7,7 @@ import toast from 'react-hot-toast';
 import { useState, useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 import SignUpbtn from '../btn/SignUpbtn';
+import Transiton from '../../Transiton';
 
 function Register() {
   const {setUserInfo, userInfo} = useContext(AppContext); 
@@ -102,7 +103,7 @@ function Register() {
     <div className='bg-gray-100 text-black min-h-screen flex'>
       <div className='hidden sm:block relative w-1/2'>
         <div className='absolute top-8 left-8 z-10'>
-        <Link to='/' className='font-bold text-white text-3xl flex gap-2 items-center'>
+        <Link to='/' className='font-bold cursor-not-allowed text-white text-3xl flex gap-2 items-center'>
                  <img src={Logo} alt="" className='w-10
                  ' />
                  Shophere
@@ -128,7 +129,7 @@ function Register() {
           </a>
         </div>
 
-        <div data-aos='zoom-in' className='max-w-md w-full mx-auto'>
+        <div data-aos='zoom-in' className='max-w-md w-full mx-auto space-y-3'>
           <div className='flex items-center gap-3 mb-8'>
             <Lock className='text-black text-3xl'/>
             <h1 className='text-black font-bold text-2xl md:text-3xl'>
@@ -148,7 +149,6 @@ function Register() {
           )}
             <div className='space-y-4'>
               <input 
-                required 
                 type="text" 
                 className='w-full px-4 py-2 text-md border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent' 
                 placeholder='Username'
@@ -159,7 +159,6 @@ function Register() {
                   <p className="text-red-600 text-sm">{errors.username}</p>
                 )}
               <input 
-                required 
                 type="email" 
                 className='w-full px-4 py-2 text-md border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent' 
                 placeholder='Email Address' 
@@ -170,7 +169,7 @@ function Register() {
                   <p className="text-red-600 text-sm">{errors.email}</p>
                 )}
               <input 
-                required 
+             
                 type="password" 
                 className='w-full px-4 py-2 text-md border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent' 
                 placeholder='Password'
@@ -181,7 +180,6 @@ function Register() {
                   <p className="text-red-600 text-sm">{errors.password}</p>
                 )}
               <input 
-                required 
                 type="password" 
                 className='w-full px-4 py-2 text-md border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent' 
                 placeholder='Confirm Password' 
@@ -192,9 +190,7 @@ function Register() {
                   <p className="text-red-600 text-sm">{errors.confirmPassword}</p>
                 )}
             </div>
-            <div className='mx-auto md:p-auto lg:pl-12'>
-                <GoogleOauth bgColors='gray-100'/>
-            </div>
+          
 
             <SignUpbtn
                 text={loading ? 'Signing Up...' : 'Get Started'}
@@ -210,6 +206,11 @@ function Register() {
               <span>Create Account</span>
               <ArrowRight className="w-5 h-5" />
             </button> */}
+            
+          </form>
+          <div className='mx-auto md:p-auto lg:pl-12'>
+                <GoogleOauth bgColors=''/>
+            </div>
 
             <p className='text-center text-gray-600'>
               Already have an account? 
@@ -217,11 +218,10 @@ function Register() {
                 Sign In
               </Link>
             </p>
-          </form>
         </div>
       </div>
     </div>
   );
 }
 
-export default Register;
+export default Transiton(Register);

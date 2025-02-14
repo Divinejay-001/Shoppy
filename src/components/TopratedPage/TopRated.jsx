@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ShoppingCart, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png'
+import Transiton from '../../Transiton';
 
 const products = [
   {
@@ -346,7 +347,7 @@ function TopRated() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
            
-            <Link to="/" className="text-2xl flex justify-center items-center gap-1 font-bold text-gray-900 text-center">
+            <Link to="/home" className="text-2xl flex justify-center items-center gap-1 font-bold text-gray-900 text-center">
              <img src={logo} className="w-6 h-6" alt="Logo"/>
               Shophere
             </Link>
@@ -446,14 +447,14 @@ function TopRated() {
                       <div className="flex items-center gap-2 mt-2">
                         <button
                           onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                          className="px-2 py-1 border rounded"
+                          className="px-2 py-1 border rounded text-red-700"
                         >
                           -
                         </button>
                         <span>{item.quantity}</span>
                         <button
                           onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                          className="px-2 py-1 border rounded"
+                          className="px-2 py-1 border rounded text-1xl text-red-700"
                         >
                           +
                         </button>
@@ -488,4 +489,4 @@ function TopRated() {
   );
 }
 
-export default TopRated;
+export default Transiton(TopRated);

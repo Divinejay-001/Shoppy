@@ -2,7 +2,10 @@ import React from 'react'
 
 const Button = ({styles, text}) => {
   return (
-<button type='submit' className={` text-lg font-bold w-full md:w-[280px] xl:w-[300px] px-4 whitespace-nowrap rounded-[20px] p-[10px] gap-[10px] ${styles}`}>
+<button type='submit' className={` w-full
+    hover:scale-105 duration-300 transition-all
+     bg-primary group-hover:bg-tertiary/60
+      group-hover:text-white px-2 py-2 rounded-md  ${styles}`}>
         {text}
     </button>
     )

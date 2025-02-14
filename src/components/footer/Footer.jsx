@@ -121,7 +121,7 @@ Shophere
         <div             className='grid text-left  sm:text-center mt-8 border-t-2 pt-6'>
         
             <p >Built By Divinegift Johnson </p>
-            <p className='text-white  '>&copy; 2025. All rights reserved. || My Coding Journey</p>
+            <p className='text-white  '>&copy; {new Date().getFullYear()}. All rights reserved. || My Coding Journey</p>
         </div>
     </div>
  

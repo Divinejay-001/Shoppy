@@ -1,17 +1,16 @@
-import React from 'react'
 import { useContext, useState } from 'react'
-import { GoogleAuthProvider,  getAuth } from 'firebase/auth/web-extension'
-import { signInWithPopup } from 'firebase/auth'
-import { app} from '../firebase'
+import {GoogleAuthProvider,  getAuth, signInWithPopup } from 'firebase/auth'
+import {app} from '../firebase'
 import { AppContext } from '../context/AppContext'
-import { FaGoogle } from 'react-icons/fa'
 import Button from '../components/btn/Button'
 import Google from '../assets/google.png'
+import toast from "react-hot-toast";
+
 
 
 const GoogleOauth = ({bgColors}) => {
-    const {setUserInfo}= useContext(AppContext)
-    const [isloading, setIsloading]=useState(false)
+        const {setUserInfo}= useContext(AppContext)
+    const [isLoading, setIsloading]=useState(false)
 
     const handleClick = async () => { 
         try{
@@ -20,7 +19,7 @@ const GoogleOauth = ({bgColors}) => {
             const auth = getAuth(app);
             const result = await signInWithPopup(auth, provider); 
             console.log({result});
-            const res = await fetch(`http://localhost:3050/api/auth/google-auth`, {
+            const res = await fetch(`http://localhost:3000/api/auth/google-auth`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -48,29 +47,23 @@ const GoogleOauth = ({bgColors}) => {
         }
     }
   return (
-    <div className='text-gray-700'>
-       <div className='flex items-center '>
+      <div className='flex justify-center items-center '>
          <img
           src={Google}
-          className="w-5 h-5 relative z-30 left-8 md:left-12 lg:left-16 "
+          className="w-4 h-4 relative z-30 left-10 md:left-12 lg:left-16 "
           alt="Google Logo" 
                />
-             <Button
-               onClick={handleClick}
-               text={isloading ? 'Signing in...' : 'Continue with Google'}
-               styles="w-[100%] border-2 border-gray-700 relative left-0 md:left-3
-          hover:scale-105 duration-300 transition-all
-          group-hover:bg-tertiary/60
-          border-red-50
-          group-hover:text-white px-6 py-2 rounded-md shadow-xl flex items-center justify-center space-x-2"
-               bgColors={bgColors}
-               disabled={isloading}
-             >
-              
-               <span>{isloading ? 'Signing in...' : 'Continue with Google'}</span>
-             </Button>
+             <Button              
+               styles={`${bgColors} w-full
+    hover:scale-105 duration-700 transition-color
+   bg-transparent hover:bg-black hover:text-white relative lg:-left-9  border-2 border-gray-400 group-hover:bg-tertiary/60
+      group-hover:text-white   rounded-md `}
+         disabled={isLoading}
+             text={isLoading ? 'Signing in...' : 'Continue with Google'}
+             onClick={handleClick}
+             />
        </div>
-  </div>
+  
   
    
 

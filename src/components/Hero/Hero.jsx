@@ -132,7 +132,7 @@ order-2 sm:order-1 relative z-10'>
      data-aos='zoom-in'
      data-aos-once='true'>
        
-        <img src={data.image} alt="" className='w-[300px]
+        <img src={data.image}  alt="" className='w-[300px]
         h-[300px] sm:h-[450px] sm:w-[450px] lg:scale-120 sm:scale-125
         object-contain mx-auto' />
     </div>

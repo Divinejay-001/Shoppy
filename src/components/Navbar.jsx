@@ -66,7 +66,7 @@ const Navbar = ({handleOrderPopup}) => {
     <div className='container flex justify-between
     items-center '>
         <div className='relative right-2'>
-        <Link to="/" className='font-bold
+        <Link to="/home" className='font-bold
         text-2xl sm:text-3xl flex gap-2'>
             <img src={Logo} alt="" className='w-10
             ' />
