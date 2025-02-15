@@ -23,7 +23,7 @@ const LandingPage = () => {
        </div>
           <div className="container mx-auto pb-16  px-4 h-full flex items-center relative">
             <div className="max-w-xl text-white">
-            <h1 className="text-5xl font-bold mb-3">Elevate Your Style with Shophere Collection</h1>
+            <h1 className="text-4xl sm:text-5xl font-bold mb-3">Elevate Your Style with Shophere Collection</h1>
 <p className="text-xl mb-6 text-white">
   Explore our exclusive selection of premium fashion pieces, thoughtfully curated to redefine elegance and sophistication.  
 </p>
