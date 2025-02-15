@@ -14,7 +14,7 @@ const LandingPage = () => {
       
         <div className="absolute inset-0 bg-black/50" />
         <div 
-          className="h-[720px] sm:h-[600px] md:h-[1000px] lg:h-[700px] bg-cover bg-center dark:shadow-2xl"
+          className="h-[730px] sm:h-[600px] md:h-[1000px] lg:h-[700px] bg-cover bg-center dark:shadow-2xl"
           style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")' }}
         >
           <div className='flex space-x-1 items-center relative text-3xl left-6 top-3'>
