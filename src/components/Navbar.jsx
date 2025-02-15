@@ -67,7 +67,7 @@ const Navbar = ({handleOrderPopup}) => {
     items-center '>
         <div className='relative right-2'>
         <Link to="/home" className='font-bold
-        text-2xl sm:text-3xl flex gap-2'>
+        text-2xl sm:text-3xl flex '>
             <img src={Logo} alt="" className='w-10
             ' />
             Shophere
