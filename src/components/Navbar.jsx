@@ -67,8 +67,8 @@ const Navbar = ({handleOrderPopup}) => {
     items-center '>
         <div className='relative right-2'>
         <Link to="/home" className='font-bold
-        text-2xl sm:text-3xl flex '>
-            <img src={Logo} alt="" className='w-10
+        text-2xl sm:text-3xl flex gap-1'>
+            <img src={Logo} alt="" className='w-7 h-7 sm:w-10 sm:h-8
             ' />
             Shophere
         </Link>
@@ -98,7 +98,7 @@ const Navbar = ({handleOrderPopup}) => {
     onClick={() => handleOrderPopup() }
     className='bg-gradient-to-r from-primary
     to-secondary transition-all duration-200
-    text-white py-1 px-4 rounded-full flex items-center
+    text-white py-1 px-2 sm:px-4 rounded-full flex items-center
     gap-3 group'>
         <span
         className='sm:group-hover:block hidden transition-all duration-200'>
