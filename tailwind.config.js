@@ -12,6 +12,9 @@ export default {
         secondary: '#ed8900',
         tertiary: '#D22DC9',
       },
+      fontFamily: {
+        sans: ['Montserrat', 'sans-serif'],
+      },
      container: {
        center: true,
        padding:{

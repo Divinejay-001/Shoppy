@@ -12,7 +12,7 @@ const LandingPage = () => {
       {/* Hero Section */}
       <div className="relative">
       
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/50" />
         <div 
           className="h-[750px] sm:h-[700px] md:h-[1000px] lg:h-[700px] bg-cover bg-center dark:shadow-2xl"
           style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")' }}

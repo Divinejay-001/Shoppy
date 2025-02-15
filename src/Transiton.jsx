@@ -13,7 +13,7 @@ const Transition = (OgComponent) => {
         animate={{ scaleY: 0 }}
         exit={{ scaleY: 1}}
         transition={{ 
-          duration: 1, 
+          duration: 0.5, 
           ease: [0.22, 1, 0.36, 1],
           delay: 0.1 
         }}
@@ -29,14 +29,14 @@ const Transition = (OgComponent) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.8 }}
           >
-            ShopHere
+            Shophere
           </motion.h1>
           <motion.div 
             className="absolute -inset-1 blur-lg bg-gradient-to-r from-white/20 to-transparent 
                        opacity-50 -z-10"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 0.5 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
           />
         </div>
       </motion.div>
@@ -49,7 +49,7 @@ const Transition = (OgComponent) => {
         animate={{ clipPath: 'inset(100% 0 0 0)' }}
         exit={{ clipPath: 'inset(0 0 0 0)' }}
         transition={{ 
-          duration: 1, 
+          duration: 0.5, 
           ease: [0.22, 1, 0.36, 1],
           delay: 0.1 
         }}
@@ -60,10 +60,10 @@ const Transition = (OgComponent) => {
                        bg-gradient-to-r from-white via-gray-200 to-gray-400
                        tracking-tight"
             initial={{ opacity: 1, y: 0 }}
-            animate={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.8 }}
+            animate={{ opacity: 1, y: -20 }}
+            transition={{ duration: 0.5 }}
           >
-            ShopHere
+            Shophere
           </motion.h1>
           <motion.div 
             className="absolute -inset-1 blur-lg bg-gradient-to-r from-white to-transparent 
