@@ -56,7 +56,7 @@ const GoogleOauth = ({bgColors}) => {
              <Button              
                styles={`${bgColors} w-full
     hover:scale-105 duration-700 transition-color
-   bg-transparent hover:bg-black hover:text-white relative lg:-left-9  border-2 border-gray-400 group-hover:bg-tertiary/60
+   bg-transparent hover:bg-black/10  relative lg:-left-9  border-2 border-gray-400 group-hover:bg-tertiary/60
       group-hover:text-white   rounded-md `}
          disabled={isLoading}
              text={isLoading ? 'Signing in...' : 'Continue with Google'}
