@@ -77,8 +77,8 @@ const Product = () => {
         data-aos-delay={data.aosDelay}
         key={data.id}
         className='space-y-3 '>
-<img src={data.img} alt="" className='h-[220px] w-[150px]
-object-cover rounded-md hover:scale-105 duration-500 transition-all'/>
+<img src={data.img} alt="" className='h-[220px] sm:w-[250px] w-[600px]
+object-fill rounded-md hover:scale-105 duration-500 transition-all'/>
 <div>
     <h3 className='font-semibold'>{data.title}</h3>
     <p className='text-sm text-gray-600'>{data.color}</p>

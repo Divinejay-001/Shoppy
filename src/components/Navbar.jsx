@@ -135,7 +135,7 @@ cursor-pointer' />
                         hover:text-primary duration-200'>Home</Link>
            <Link to='/topRated' className='inline-block px-4 
                         hover:text-primary duration-200'>Top Rated</Link>
-           <Link to='/' className='inline-block px-4 
+           <Link to='/mensWear' className='inline-block px-4 
                         hover:text-primary duration-200'>Mens Wear</Link>
            <Link to='/register' className='inline-block px-4 
                         hover:text-primary duration-200'>Register</Link>

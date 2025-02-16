@@ -61,9 +61,9 @@ md:grid-cols-3 gap-20 md:gap-5 place-items-center'>
             relative shadow-2xl duration-300 group max-w-[300px] '> 
                 {/* img sec  */}
 <div className='
-h-[100px]' >
+h-[170px]' >
    <img src={data.img} alt=""
-   className='max-w-[140px] block mx-auto
+   className='max-w-[200px] block mx-auto
     transform -translate-y-20 group-hover:scale-105 duration-300 
     drop-shadow-md' />
 </div>   

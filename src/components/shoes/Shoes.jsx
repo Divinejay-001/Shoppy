@@ -135,7 +135,7 @@ const Shoes = ({handleOrderPopup}) => {
     }
 
   return (
-    <div className='   sm:mt-0 lg:pt-7 sm:mb-0 duration-200  lg:h-[500px] '>
+    <div className=' mt-6  sm:mt-6 lg:pt-7 sm:mb-0 duration-200  lg:h-[500px] '>
     <div className='container mb-0 md:pb-20 '>
         {/* Header sec  */}
 <div className='text-center mb-10 max-w-[600px] mx-auto grid gap-2'>
