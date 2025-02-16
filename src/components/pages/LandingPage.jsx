@@ -29,7 +29,7 @@ const LandingPage = () => {
 </p>
 <div className='flex flex-col sm:flex-row gap-2'>
   <button className="bg-white  text-black px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-    <Link className='flex items-center justify-center ' to="/register">Start Your Journey
+    <Link className='flex items-center justify-center ' to="/register">Explore Your Style
     </Link>
   </button>
   <button className="bg-white  text-black px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">

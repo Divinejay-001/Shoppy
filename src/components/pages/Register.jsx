@@ -126,14 +126,14 @@ function Register() {
       <div className='w-full sm:w-1/2 px-6 sm:px-12 flex flex-col justify-center'>
         <div className='sm:hidden mb-10 pt-8'>
           <a href="/" className='font-bold text-black text-2xl flex gap-2 items-center'>
-            <User className="w-8 h-8" />
+            <User className="w-8 h-8  "  />
             Shophere
           </a>
         </div>
 
         <div data-aos='zoom-in' className='max-w-md w-full mx-auto space-y-3'>
           <div className='flex items-center gap-3 mb-8'>
-            <Lock className='text-black text-3xl'/>
+            <Lock className='text-black text-3xl hidden md:block'/>
             <h1 className='text-black font-bold text-2xl md:text-3xl'>
               Create your account
             </h1>
