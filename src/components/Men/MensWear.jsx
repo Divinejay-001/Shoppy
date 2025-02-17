@@ -9,112 +9,112 @@ const products = [
   {
     id: 1,
     name: "Classic Fit Suit",
-    price: 599.99,
+    price: '600k',
     image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&q=80&w=800",
     category: "Suits"
   },
   {
     id: 2,
     name: "Premium Cotton Shirt",
-    price: 79.99,
+    price: '40k',
     image: "https://i.pinimg.com/736x/ce/62/25/ce6225aac125047600cb44464712a354.jpg",
     category: "Shirts"
   },
   {
     id: 3,
     name: "Slim Fit Chinos",
-    price: 89.99,
+    price: '14k',
     image: "https://i.pinimg.com/736x/7b/68/17/7b6817f3816f6901d1d268246a191cdc.jpg",
     category: "Pants"
   },
   {
     id: 4,
     name: "Leather Oxford Shoes",
-    price: 199.99,
+    price: '50k',
     image: "https://i.pinimg.com/736x/60/80/bd/6080bdd15b4e7327deb6360819aca5ac.jpg",
     category: "Shoes"
   },
   {
     id: 5,
     name: "Wool Overcoat",
-    price: 299.99,
+    price: '299k',
     image: "https://i.pinimg.com/736x/c5/0a/e8/c50ae8856ec4ac69afb6c614d960b80d.jpg",
     category: "Outerwear"
   },
   {
     id: 6,
     name: "Cashmere Sweater",
-    price: 149.99,
+    price: '300k',
     image: "https://i.pinimg.com/736x/93/61/4b/93614b9b6c5a53d9bbd1a83ced80b423.jpg",
     category: "Knitwear"
   },
   {
     id: 7,
     name: "Pinstripe Business Suit",
-    price: 699.99,
+    price: '400k',
     image: "https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&q=80&w=800",
     category: "Suits"
   },
   {
     id: 8,
     name: "Linen Summer Shirt",
-    price: 89.99,
+    price: '7k',
     image: "https://images.unsplash.com/photo-1604695573706-53170668f6a6?auto=format&fit=crop&q=80&w=800",
     category: "Shirts"
   },
   {
     id: 9,
     name: "Leather Dress Belt",
-    price: 59.99,
+    price: '5k',
     image: "https://i.pinimg.com/736x/8b/54/8b/8b548b53f351b07b792b4d68970adff7.jpg",
     category: "Accessories"
   },
   {
     id: 10,
     name: "Silk Tie Collection",
-    price: 45.99,
+    price: '2k',
     image: "https://i.pinimg.com/736x/ce/de/8f/cede8f8ea94453e54e26f54b0793d178.jpg",
     category: "Accessories"
   },
   {
     id: 11,
     name: "Merino Wool Blazer",
-    price: 299.99,
+    price: '350k',
     image: "https://images.unsplash.com/photo-1592878904946-b3cd8ae243d0?auto=format&fit=crop&q=80&w=800",
     category: "Suits"
   },
   {
     id: 12,
     name: "Leather Messenger Bag",
-    price: 199.99,
+    price: '20k',
     image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=800",
     category: "Accessories"
   },
   {
     id: 13,
     name: "Premium Denim Jeans",
-    price: 129.99,
+    price: '25k',
     image: "https://images.unsplash.com/photo-1582552938357-32b906df40cb?auto=format&fit=crop&q=80&w=800",
     category: "Pants"
   },
   {
     id: 14,
     name: "Suede Chelsea Boots",
-    price: 249.99,
+    price: '350k',
     image: "https://i.pinimg.com/736x/fe/f7/83/fef783a25c8674140d2ef81e39a25869.jpg",
     category: "Shoes"
   },
   {
     id: 15,
     name: "Quilted Winter Jacket",
-    price: 279.99,
+    price: '250k',
     image: "https://images.unsplash.com/photo-1557418669-db3f781a58c0?auto=format&fit=crop&q=80&w=800",
     category: "Outerwear"
   },
   {
     id: 16,
     name: "Patterned Dress Socks",
-    price: 14.99,
+    price: '1500',
     image: "https://i.pinimg.com/736x/f8/5b/ad/f85badf6f7aaa213d90f1a189e604107.jpg",
     category: "Accessories"
   },
@@ -128,63 +128,63 @@ const products = [
   {
     id: 18,
     name: "Formal Dress Pants",
-    price: 119.99,
+    price: '30k',
     image: "https://i.pinimg.com/736x/f3/fa/d2/f3fad26ecc6479e27eaeb90b019b779e.jpg",
     category: "Pants"
   },
   {
     id: 19,
     name: "Cotton Polo Shirt",
-    price: 49.99,
+    price: '15k',
     image: "https://i.pinimg.com/736x/08/82/bd/0882bd9945fb08229b89b5b97fd0cbd9.jpg",
     category: "Shirts"
   },
   {
     id: 20,
     name: "Leather Wallet",
-    price: 79.99,
+    price: '10k',
     image: "https://i.pinimg.com/736x/4e/50/55/4e5055eee448bc6cc54386368c8dc1f0.jpg",
     category: "Accessories"
   },
   {
     id: 21,
     name: "Wool Dress Coat",
-    price: 399.99,
+    price: '399k',
     image: "https://i.pinimg.com/736x/df/19/3c/df193c656d4fa36db76868b919e35d08.jpg",
     category: "Outerwear"
   },
   {
     id: 22,
     name: "Business Briefcase",
-    price: 249.99,
+    price: '199k',
     image: "https://i.pinimg.com/736x/7d/cd/b4/7dcdb4f6b3a9c0b6ee388a5a7b29cc1b.jpg",
     category: "Accessories"
   },
   {
     id: 23,
     name: "Silk Pocket Square",
-    price: 29.99,
+    price: '5k',
     image: "https://i.pinimg.com/736x/e3/55/b5/e355b5530231f3fdc378296a523c14b2.jpg",
     category: "Accessories"
   },
   {
     id: 24,
     name: "Leather Dress Gloves",
-    price: 69.99,
-    image: "https://images.unsplash.com/photo-1578632292335-df3abbb0d586?auto=format&fit=crop&q=80&w=800",
+    price: '50k',
+    image: "https://i.pinimg.com/736x/8d/55/13/8d551312afda0fcfe6f8efa3abbd9ff4.jpg",
     category: "Accessories"
   },
   {
     id: 25,
     name: "Tuxedo Set",
-    price: 899.99,
+    price: '81,859',
     image: "https://images.unsplash.com/photo-1555069519-127aadedf1ee?auto=format&fit=crop&q=80&w=800",
     category: "Suits"
   },
   {
     id: 26,
     name: "Designer Sunglasses",
-    price: 199.99,
+    price: '30k',
     image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=800",
     category: "Accessories"
   },
