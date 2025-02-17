@@ -341,22 +341,22 @@ function TopRated() {
   const cartTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-950">
       {/* Header */}
-      <header className="bg-white shadow-md">
+      <header className="bg-white dark:bg-gray-900 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
            
-            <Link to="/home" className="text-2xl flex justify-center items-center gap-1 font-bold text-gray-900 text-center">
+            <Link to="/home" className="text-2xl flex justify-center items-center gap-1 font-bold text-gray-900 dark:text-gray-200 text-center">
              <img src={logo} className="w-6 h-6" alt="Logo"/>
               Shophere
             </Link>
             
             <button
               onClick={() => setIsCartOpen(true)}
-              className="relative text-gray-600 hover:text-gray-900"
+              className="relative text-gray-600 hover:text-gray-900 dark:hover:text-white"
             >
-              <ShoppingCart className="w-6 h-6" />
+              <ShoppingCart className="w-6 h-6 text-gray-900 dark:text-gray-200" />
               {cart.length > 0 && (
                 <span className="absolute -top-1 -right-2 bg-blue-600 text-white rounded-full w-4 h-4 text-xs flex items-center justify-center">
                   {cart.reduce((sum, item) => sum + item.quantity, 0)}

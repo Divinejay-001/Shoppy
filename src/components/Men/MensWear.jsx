@@ -24,28 +24,28 @@ const products = [
     id: 3,
     name: "Slim Fit Chinos",
     price: 89.99,
-    image: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&q=80&w=800",
+    image: "https://i.pinimg.com/736x/7b/68/17/7b6817f3816f6901d1d268246a191cdc.jpg",
     category: "Pants"
   },
   {
     id: 4,
     name: "Leather Oxford Shoes",
     price: 199.99,
-    image: "https://images.unsplash.com/photo-1614252369475-531eba835eb1?auto=format&fit=crop&q=80&w=800",
+    image: "https://i.pinimg.com/736x/60/80/bd/6080bdd15b4e7327deb6360819aca5ac.jpg",
     category: "Shoes"
   },
   {
     id: 5,
     name: "Wool Overcoat",
     price: 299.99,
-    image: "https://images.unsplash.com/photo-1544923408-75c5cef46f14?auto=format&fit=crop&q=80&w=800",
+    image: "https://i.pinimg.com/736x/c5/0a/e8/c50ae8856ec4ac69afb6c614d960b80d.jpg",
     category: "Outerwear"
   },
   {
     id: 6,
     name: "Cashmere Sweater",
     price: 149.99,
-    image: "https://images.unsplash.com/photo-1614251055880-ee96e4803393?auto=format&fit=crop&q=80&w=800",
+    image: "https://i.pinimg.com/736x/93/61/4b/93614b9b6c5a53d9bbd1a83ced80b423.jpg",
     category: "Knitwear"
   },
   {
@@ -101,7 +101,7 @@ const products = [
     id: 14,
     name: "Suede Chelsea Boots",
     price: 249.99,
-    image: "https://images.unsplash.com/photo-1638247025967-b4e38f787b76?auto=format&fit=crop&q=80&w=800",
+    image: "https://i.pinimg.com/736x/fe/f7/83/fef783a25c8674140d2ef81e39a25869.jpg",
     category: "Shoes"
   },
   {
@@ -115,35 +115,35 @@ const products = [
     id: 16,
     name: "Patterned Dress Socks",
     price: 14.99,
-    image: "https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?auto=format&fit=crop&q=80&w=800",
+    image: "https://i.pinimg.com/736x/f8/5b/ad/f85badf6f7aaa213d90f1a189e604107.jpg",
     category: "Accessories"
   },
   {
     id: 17,
     name: "Leather Dress Watch",
-    price: 299.99,
-    image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&q=80&w=800",
+    price: '299k',
+    image: "https://i.pinimg.com/736x/07/5f/2b/075f2b4959143da576b8003851995e28.jpg",
     category: "Accessories"
   },
   {
     id: 18,
     name: "Formal Dress Pants",
     price: 119.99,
-    image: "https://images.unsplash.com/photo-1594633313593-bab3825d0caf?auto=format&fit=crop&q=80&w=800",
+    image: "https://i.pinimg.com/736x/f3/fa/d2/f3fad26ecc6479e27eaeb90b019b779e.jpg",
     category: "Pants"
   },
   {
     id: 19,
     name: "Cotton Polo Shirt",
     price: 49.99,
-    image: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&q=80&w=800",
+    image: "https://i.pinimg.com/736x/08/82/bd/0882bd9945fb08229b89b5b97fd0cbd9.jpg",
     category: "Shirts"
   },
   {
     id: 20,
     name: "Leather Wallet",
     price: 79.99,
-    image: "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&q=80&w=800",
+    image: "https://i.pinimg.com/736x/4e/50/55/4e5055eee448bc6cc54386368c8dc1f0.jpg",
     category: "Accessories"
   },
   {
@@ -157,14 +157,14 @@ const products = [
     id: 22,
     name: "Business Briefcase",
     price: 249.99,
-    image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&q=80&w=800",
+    image: "https://i.pinimg.com/736x/7d/cd/b4/7dcdb4f6b3a9c0b6ee388a5a7b29cc1b.jpg",
     category: "Accessories"
   },
   {
     id: 23,
     name: "Silk Pocket Square",
     price: 29.99,
-    image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&q=80&w=800",
+    image: "https://i.pinimg.com/736x/e3/55/b5/e355b5530231f3fdc378296a523c14b2.jpg",
     category: "Accessories"
   },
   {
@@ -187,7 +187,35 @@ const products = [
     price: 199.99,
     image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=800",
     category: "Accessories"
-  }
+  },
+  {
+    id: 27,
+    name: "Luxury Diamond Watch",
+    price: '1.5B',
+    image: "https://i.pinimg.com/736x/b7/45/0e/b7450eb625466593bab4985b5e53b97d.jpg",
+    category: "Accessories"
+  },
+  {
+    id: 28,
+    name: "Baggy Cargo Pants",
+    price: '40k',
+    image: "https://i.pinimg.com/736x/79/e8/81/79e8818f9e53c9f04f0def1d0a6cdfd1.jpg",
+    category: "Pants"
+  },
+  {
+    id: 29,
+    name: "Sleek Nike Airforce",
+    price: '150k',
+    image: "https://i.pinimg.com/736x/97/15/1e/97151e213fe4d7707280c11f2743827e.jpg",
+    category: "Shoes"
+  },
+  {
+    id: 30,
+    name: "Ice Necklace",
+    price: '1B',
+    image: "https://i.pinimg.com/736x/4e/89/bb/4e89bb1bffb83b256cb86ef4a99424ec.jpg",
+    category: "Accessories"
+  },
 ];
 
 
@@ -224,40 +252,25 @@ function MensWear({ setCartCount }) {
       const [isCartOpen, setIsCartOpen] = useState(false);
   return (
     <div className="max-w-7xl  text-black  mx-auto px-4 sm:px-6 lg:px-8 py-12 dark:text-white">
-      <div className="flex justify-between items-center mb-8">
-        <div className='flex items-center gap-1'>
+      <div className='flex items-center gap-1 relative bottom-5 right-1'>
             <img src={Logo} className='w-9 h-8' alt="" />
             <Link to='/home' className="text-3xl font-bold text-black dark:text-white ">Shophere</Link>
         </div>
-        <div className="md:flex flex-col sm:flex-row hidden gap-4">
-          <select className="px-4 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200">
-            <option value="">All Categories</option>
-            <option value="suits">Suits</option>
-            <option value="shirts">Shirts</option>
-            <option value="pants">Pants</option>
-            <option value="shoes">Shoes</option>
-            <option value="outerwear">Outerwear</option>
-            <option value="knitwear">Knitwear</option>
-            <option value="accessories">Accessories</option>
-          </select>
-          <select className="px-4 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200">
-            <option value="featured">Featured</option>
-            <option value="price-low">Price: Low to High</option>
-            <option value="price-high">Price: High to Low</option>
-            <option value="newest">Newest</option>
-          </select>
-        </div>
+      <div className="flex justify-center items-center mb-8">
+        <h1>Mens Wear</h1>
+       <div className='absolute right-14'>
          <button
-                      onClick={() => setIsCartOpen(true)}
-                      className="relative text-gray-600 hover:text-gray-900"
-                    >
-                      <ShoppingCart className="w-6 h-6 dark:text-white" />
-                      {cart.length > 0 && (
-                        <span className="absolute -top-1 -right-2 bg-blue-600 text-white rounded-full w-4 h-4 text-xs flex items-center justify-center">
-                          {cart.reduce((sum, item) => sum + item.quantity, 0)}
-                        </span>
-                      )}
-                    </button>
+                        onClick={() => setIsCartOpen(true)}
+                        className="relative text-gray-600 hover:text-gray-900"
+                      >
+                        <ShoppingCart className="w-6 h-6 dark:text-white" />
+                        {cart.length > 0 && (
+                          <span className="absolute -top-1 -right-2 bg-blue-600 text-white rounded-full w-4 h-4 text-xs flex items-center justify-center">
+                            {cart.reduce((sum, item) => sum + item.quantity, 0)}
+                          </span>
+                        )}
+                      </button>
+       </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

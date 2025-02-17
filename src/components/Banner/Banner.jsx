@@ -11,10 +11,10 @@ const Banner = () => {
 <div className='grid grid-cols-1 sm:grid-cols-2 gap-6 items-center   '>
     {/* image sec  */}
     <div data-aos='zoom-in'>
-        <img src={BannerImg} alt=""
-        className='max-w-[400px] h-[350px] w-full
+        <img src='https://i.pinimg.com/736x/aa/37/92/aa37923178b5684b161c34b19c0e7314.jpg' alt=""
+        className='max-w-[400px] h-[400px] w-full
         mx-auto drop-shadow-[-10px_10px_12px_rgba(0,0,0.1)]
-        object-cover' />
+        object-cover lg:object-fill' />
     </div>
     {/* text details sec  */}
     <div className='flex flex-col justify-center  

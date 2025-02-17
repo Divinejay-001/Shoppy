@@ -11,7 +11,7 @@ import { FaStar } from 'react-icons/fa6'
 const ProductsData =[
     {
 id:1,
-img:img5,
+img:'https://i.pinimg.com/736x/f0/d7/dc/f0d7dcf6110a4ad145f0cf76c84e162c.jpg',
 title:"Women Ethnic",
 rating:5,
 color:'white',
@@ -19,7 +19,7 @@ aosDelay:"0"
 },
     {
 id:2,
-img:img7,
+img:'https://i.pinimg.com/736x/5f/b9/0c/5fb90c6169b0a7ffc42b25fa4b32b5d3.jpg',
 title:"Women western",
 rating:4.5,
 color: 'red',
@@ -27,7 +27,7 @@ aosDelay:"200"
 },
     {
 id:3,
-img:img3,
+img:'https://i.pinimg.com/736x/ce/e1/fe/cee1fefa770a00d208a1f3d6ae916857.jpg',
 title:"Googles",
 rating:5,
 color:'brown',
@@ -35,7 +35,7 @@ aosDelay:"400"
 },
     {
 id:4,
-img:img8,
+img:'https://i.pinimg.com/736x/f8/8f/b9/f88fb93f2950698e7ce5124bed13eaf1.jpg',
 title:"Printed T-Shirt",
 rating:4.4,
 color:"Yellow",
@@ -44,7 +44,7 @@ aosDelay:"600"
     {
 id:5,
 img:img6,
-title:"Fashin T-Shirt",
+title:"Luxury Shirts",
 rating:4.5,
 color:'Pink',
 aosDelay:"800"
@@ -77,7 +77,7 @@ const Product = () => {
         data-aos-delay={data.aosDelay}
         key={data.id}
         className='space-y-3 '>
-<img src={data.img} alt="" className='h-[220px] sm:w-[250px] w-[600px]
+<img src={data.img} alt="" className='h-[220px] sm:w-[250px] lg:w-[500px] w-[600px]
 object-fill rounded-md hover:scale-105 duration-500 transition-all'/>
 <div>
     <h3 className='font-semibold'>{data.title}</h3>
