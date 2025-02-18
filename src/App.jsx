@@ -27,6 +27,7 @@ import VerifyOtpPage from './components/pages/VerifyOtpPage';
 import { AnimatePresence } from 'framer-motion';
 import Transiton from './Transiton';
 import MensWear from './components/Men/MensWear';
+import Dash from './components/Dashboard/Dash';
 function App() {
 // const [orderPopup, setOrderPopup]=React.useState(false);
 
@@ -61,6 +62,7 @@ const location = useLocation()
       <Route path='/topRated' element={<TopRated />} />
       <Route path='/mensWear' element={<MensWear/>} />
       <Route path='/verifyOtp' element={<VerifyOtpPage />} />
+      <Route path='/adminDash' element={<Dash/>} />
       </Routes>
       </AnimatePresence>
     </div>

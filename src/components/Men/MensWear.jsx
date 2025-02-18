@@ -3,6 +3,7 @@ import { ShoppingCart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Logo from "../../assets/logo.png";
 import { useState } from 'react';
+import Transition from '../../Transiton';
 
 
 const products = [
@@ -302,4 +303,4 @@ function MensWear({ setCartCount }) {
   );
 }
 
-export default MensWear;
+export default Transition (MensWear) ;

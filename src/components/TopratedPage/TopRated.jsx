@@ -374,7 +374,7 @@ function TopRated() {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-full text-sm font-medium ${
+              className={`md:px-4 px-1 py-2 md:py-3 rounded-full whitespace-nowrap text-sm font-medium ${
                 selectedCategory === category
                   ? 'bg-blue-600 text-white'
                   : 'bg-white text-gray-600 hover:bg-gray-50'

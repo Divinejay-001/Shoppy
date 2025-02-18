@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Sidebar = () => {
+const Sidebar = ({setIsSideBarOpen}) => {
   return (
-    <div>Sidebar</div>
+    <aside className='fixed top-0 left-0 z-40 '>Sidebar</aside>
   )
 }
 
