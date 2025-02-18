@@ -104,8 +104,7 @@ const SignIn = () => {
       </div>
       <div data-aos='zoom-in' className='sm:w-[1/2]   pr-12 sm:pr-0 mx-auto   sm:m-0 lg:m-14 flex flex-col  sm:p-10 '>
       <div className='flex  items-center gap-3    sm:pb-0  pt-28  lg:pt-1 '>
-        <FaLock className='text-black font-bold text-2xl relative bottom-5 lg:bottom-8  sm:text-3xl'/>
-        <div className=''>
+        <div className=' flex justify-center items-center text-center mx-auto'>
           <h1 className='text-black font-bold
           text-xl sm:pb-0 pb-12 lg:pb-16 sm:0 sm:text-3xl'>Sign in to Shophere</h1>
         </div>
@@ -126,9 +125,10 @@ const SignIn = () => {
       <input 
     value={formData.password} 
     onChange={(e)=> handleInputChange('password', e.target.value)}
-    required type="password" className='w-full px-4 py-4 sm:py-2 text-md border rounded-md shadow-lg
+    required type="password" 
+    className='w-full px-4 py-4 sm:py-2 text-md border rounded-md shadow-lg
       focus:outline-none focus:border-black' placeholder='Password' />
-
+ <input type="date"   className='w-full px-4 py-4 sm:py-2 text-md border rounded-md shadow-lg focus:outline-none focus:border-black'  name="" id="" />
     </form>
     <div className='pt-1 group'>
      

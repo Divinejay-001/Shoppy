@@ -8,7 +8,7 @@ import { IoMdApps, IoMdClose,  } from "react-icons/io";
 import { list } from 'postcss'
 import { Link } from 'react-router-dom'
 import Responsivemenu from './responsive/Responsivemenu'
-import { GiHamburgerMenu } from 'react-icons/gi'
+import {HiOutlineMenuAlt2} from 'react-icons/hi'
 
 const Menu = [
     {
@@ -76,7 +76,7 @@ const Navbar = ({handleOrderPopup}) => {
         {/* search bar  */}
         <div className='flex justify-between items-center
         md:gap-4 gap-2 '>
-            <div className='relative group hidden sm:block'>
+            <div className='relative group hidden md:block'>
             <input 
             type="text" 
             placeholder='search
@@ -117,7 +117,7 @@ cursor-pointer' />
     {open ? (
             <IoMdClose className="text-3xl dark:text-white text-primary" /> // Render close icon if open
           ) : (
-            <GiHamburgerMenu className="text-2xl dark:text-white text-secondary" /> // Render app icon if closed
+            <HiOutlineMenuAlt2 className="text-3xl dark:text-white text-secondary" /> // Render app icon if closed
           )}
           <Responsivemenu open={open}/>
     </div>
@@ -129,7 +129,7 @@ cursor-pointer' />
         
         {/* lower Navbar */}
         <div data-aos='zoom-in' className='flex justify-center'>
-           <ul className='sm:flex hidden items-center
+           <ul className='md:flex hidden items-center
            gap-4'>
            <Link to='/' className='inline-block px-4 
                         hover:text-primary duration-200'>Home</Link>

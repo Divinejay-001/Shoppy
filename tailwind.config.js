@@ -13,7 +13,7 @@ export default {
         tertiary: '#D22DC9',
       },
       fontFamily: {
-        sans: ['Montserrat', 'sans-serif'],
+        sans: ['Montserrat', 'sans-serif', "Quicksand"],
       },
      container: {
        center: true,

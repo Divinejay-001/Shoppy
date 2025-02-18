@@ -61,7 +61,7 @@ const ImageList = [
     {
         id: 6,
         image: image7,
-        title: 'Stand Out with Unmatched Style',
+        title: 'Stand Out with Unique Style',
         description:' At our e-commerce store, we believe your style is your signature. That’s why we offer a carefully curated selection of products designed to elevate your look and set you apart from the crowd.'
     },
 ];
