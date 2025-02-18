@@ -55,7 +55,7 @@ const ImageList = [
     {
         id: 5,
         image: image5,
-        title: "Shop with Ease, Comfort, and Confidence!",
+        title: "Shop with Ease, Comfort, and Confidence",
         description: 'We’ve made shopping effortless and stress-free, so you can order from the comfort of your own space. Whether you’re at home, at work, or on the go, our seamless online platform allows you to browse, select, and purchase with ease.'
     },
     {

@@ -128,7 +128,7 @@ const SignIn = () => {
     required type="password" 
     className='w-full px-4 py-4 sm:py-2 text-md border rounded-md shadow-lg
       focus:outline-none focus:border-black' placeholder='Password' />
- <input type="date" placeholder='Date of Birth'  className='w-full px-4 py-4 sm:py-2 text-md border rounded-md shadow-lg focus:outline-none focus:border-black'  name="" id="" />
+ {/* <input type="date" placeholder='Date of Birth'  className='w-full px-4 py-4 sm:py-2 text-md border rounded-md shadow-lg focus:outline-none focus:border-black'  name="" id="" /> */}
 
     </form>
     <div className='pt-1 group'>

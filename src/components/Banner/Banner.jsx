@@ -21,7 +21,7 @@ const Banner = () => {
     gap-6 sm:pt-0'>
       <h1 data-aos='fade-up' className='text-3xl sm:text-4xl dark:text-gray-400
     font-bold  '>Winter Sale Upto 50% off</h1>
-   <p data-aos='fade-up' className='text-sm text-gray-500 tracking-wide leading-5'>
+   <p data-aos='fade-up' className='text-sm text-gray-300 tracking-wide leading-5'>
   Don’t miss out on the season’s biggest savings! Explore our exclusive Winter Sale and enjoy up to 50% off on a wide range of products. Whether you’re upgrading your wardrobe, refreshing your home, or finding the perfect gift, there’s something for everyone. Shop now and make this winter unforgettable!
 </p>
 
