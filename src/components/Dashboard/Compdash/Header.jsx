@@ -6,7 +6,7 @@ import DarkMode from '../../DarkMode'
 const Header = ({toggleSideBar}) => {
   return (
     <nav className='fixed top-0 z-50 w-full 
-    bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700
+    bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700z shadow-lg
      '>
       <div className='px-3 py-3 lg:px-5 lg:pl-3'>
         <div className='flex items-center justify-between'>
@@ -18,7 +18,7 @@ const Header = ({toggleSideBar}) => {
       sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2
       focus:ring-tertiary dark:text-gray-400 dark:hover:bg-gray-700
       dark:focus:ring-gray-600'
-      onClick={toggleSideBar}>
+    onClick={toggleSideBar}>
 <HiOutlineMenuAlt2 className='text-2xl'/>
       </button>
       <a href="#" className='flex ms-2 md:me-24'>
@@ -28,7 +28,7 @@ const Header = ({toggleSideBar}) => {
  font-semibold sm:text-2xl whitespace-nowrap dark:text-white'>ShopBoard</span>     </a>
  
         </div>
-        <button className='bg-tertiary/50 dark:bg-white/40  sm:p-2 p-1 rounded-full'>
+        <button className='bg-tertiary/20 dark:bg-white/40  sm:p-2 p-1 rounded-full'>
           <DarkMode/>
         </button>
         
