@@ -8,6 +8,7 @@ import img6 from '../../assets/women/women6.jpeg'
 import img7 from '../../assets/women/women7.jpeg'
 import img8 from '../../assets/women/women8.jpeg'
 import { FaStar } from 'react-icons/fa6'
+import { Link } from 'react-router-dom'
 const ProductsData =[
     {
 id:1,
@@ -96,7 +97,7 @@ object-fill rounded-md hover:scale-105 duration-500 transition-all'/>
                  <button className='text-center mt-10
                  cursor-pointer bg-primary text-white
                  py-1 px-5 rounded-md'>
-                    View All 
+                <Link to='/womensWear'>View All </Link>    
                     </button>   
                 </div>
             </div>
