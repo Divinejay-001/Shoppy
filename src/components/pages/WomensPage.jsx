@@ -398,7 +398,7 @@ function WomensPage() {
         <Link to='/home' className='font-bold cursor-pointer text-white text-3xl flex gap-2 items-center'>
                  <img src={Logo} alt="" className='w-10
                  ' />
-                 Shophere
+                <span className='hidden sm:block'>Shophere</span>
              </Link>
           {/* <a href="/" className='font-bold text-white text-3xl flex gap-2 items-center'>
             <User className="w-8 h-8" />
