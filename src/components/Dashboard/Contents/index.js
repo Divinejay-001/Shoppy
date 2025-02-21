@@ -33,8 +33,8 @@ export const links = [
     text: "Kanban",
     badge: {
       text: "Pro",
-      color: "bg-gray-100 text-gray-800",
-      darkColor: "dark:bg-gray-700 dark:text-gray-300",
+      color: "bg-tertiary/80 text-gray-800",
+      darkColor: "dark:bg-tertiary/40 dark:text-gray-100",
     },
   },
   {
@@ -43,8 +43,8 @@ export const links = [
     text: "Inbox",
     badge: {
       text: "4",
-      color: "bg-blue-100 text-blue-800",
-      darkColor: "dark:bg-blue-900 dark:text-blue-300",
+      color: "bg-tertiary/80 text-blue-100",
+      darkColor: "dark:bg-tertiary dark:text-blue-100",
     },
   },
   {
@@ -57,21 +57,17 @@ export const links = [
     icon: FaListAlt,
     text: "Products",
   },
+  
   {
-    href: "#",
-    icon: IoIosLogIn,
-    text: "Sign In",
-  },
-  {
-    href: "#",
+    href: "/",
     icon: IoIosLogOut,
-    text: "Sign Up",
+    text: "Sign Out",
   },
 ];
 
-export const empolyeesData = [
+export const employeesData = [
   {
-    title: "Total Empolyees",
+    title: "Total Employees",
     icon: IoIosPerson,
     count: 200,
     bgColor: "bg-gray-100",
@@ -143,8 +139,8 @@ export const users = [
 export const events = [
   {
     date: "01 Aug",
-    title: "Upcoming Event",
-    description: "Lorem ipsum dolor sit amet.",
+    title: "Dev meet",
+    description: "Yoke with your fellow devs and connect",
   },
   {
     date: "15 Sept",

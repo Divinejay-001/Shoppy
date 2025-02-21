@@ -21,7 +21,7 @@ const Header = ({toggleSideBar}) => {
     onClick={toggleSideBar}>
 <HiOutlineMenuAlt2 className='text-2xl'/>
       </button>
-      <a href="#" className='flex ms-2 md:me-24'>
+      <a href="/home" className='flex ms-2 md:me-24'>
         <MdSpaceDashboard className='h-8 
         me-3 text-xl text-tertiary'/>
  <span className='self-center text-xl 

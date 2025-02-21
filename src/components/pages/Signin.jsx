@@ -85,8 +85,8 @@ const SignIn = () => {
   };
 
   return (
-    <div  className='bg-gray-100   w-full h-screen text-black flex items-start'>
-       <div className=' relative  w-10 sm:w-1/2 h-full flex flex-col  '>
+    <div  className='bg-gray-100  mx-auto  w-full h-screen text-black flex items-start'>
+       <div className=' relative   w-10 sm:w-1/2 h-full flex flex-col  '>
        <div className='absolute  sm:right-10 right-0 container flex justify-between
          items-center  '>
              <div className=''>
@@ -103,7 +103,7 @@ const SignIn = () => {
 '/>
       </div>
       <div data-aos='zoom-in' className='sm:w-[1/2]   pr-12 sm:pr-0 mx-auto   sm:m-0 lg:m-14 flex flex-col  sm:p-10 '>
-      <div className='flex  items-center gap-3    sm:pb-0  pt-28  lg:pt-1 '>
+      <div className='flex  items-center gap-3    sm:pb-0  pt-28 sm:pt-0  lg:pt-1 '>
         <div className=' flex justify-center items-center text-center mx-auto'>
           <h1 className='text-black font-bold
           text-xl sm:pb-0 pb-12 lg:pb-16 sm:0 sm:text-3xl'>Sign in to Shophere</h1>

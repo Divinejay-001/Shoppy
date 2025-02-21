@@ -13,6 +13,7 @@ const GoogleOauth = ({bgColors}) => {
     const [isLoading, setIsloading]=useState(false)
 
     const handleClick = async () => { 
+        console.log('running handleclick')
         try{
             setIsloading(true);
             const provider = new GoogleAuthProvider();

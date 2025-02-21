@@ -100,7 +100,7 @@ function Register() {
     }
   };
   return (
-    <div className='bg-gray-100 text-black min-h-screen flex'>
+    <div className=' bg-gray-100 text-black min-h-screen flex'>
       <div className='hidden sm:block relative w-1/2'>
         <div className='absolute top-8 left-8 z-10 '>
         <Link to='/' className='font-bold cursor-not-allowed text-white text-3xl flex gap-2 items-center'>
@@ -113,13 +113,13 @@ function Register() {
             Shophere
           </a> */}
         </div>
-        <d>
+        <div>
           <img
             src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
             alt="Shopping"
             className='h-screen w-full object-cover  '
           />
-        </d>
+        </div>
         <div className='absolute inset-0 bg-black/20'></div>
       </div>
 
