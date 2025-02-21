@@ -3,6 +3,8 @@ import { Heart, Filter, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo.png';
 import { FaArrowUp } from "react-icons/fa";
+import Transiton from '../../Transiton';
+
 
 function WomensPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -473,4 +475,4 @@ function WomensPage() {
   );
 }
 
-export default WomensPage;
+export default Transiton(WomensPage);
