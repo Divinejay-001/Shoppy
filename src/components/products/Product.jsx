@@ -97,7 +97,7 @@ object-fill rounded-md hover:scale-105 duration-500 transition-all'/>
                  <button className='text-center mt-10
                  cursor-pointer bg-primary text-white
                  py-1 px-5 rounded-md'>
-                <Link to='/womensWear'>View All </Link>    
+                <a href='/womensWear'>View All </a>    
                     </button>   
                 </div>
             </div>
