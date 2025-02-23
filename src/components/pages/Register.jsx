@@ -103,8 +103,8 @@ function Register() {
     <div className=' bg-gray-100 text-black min-h-screen flex'>
       <div className='hidden sm:block relative w-1/2'>
         <div className='absolute top-8 left-8 z-10 '>
-        <Link to='/' className='font-bold cursor-not-allowed text-white text-3xl flex gap-2 items-center'>
-                 <img src={Logo} alt="" className='w-10
+        <Link to='/' className=' font-bold cursor-pointer text-white text-3xl flex gap-2 items-center'>
+                 <img src={Logo} alt="" className='w-10 
                  ' />
                  Shophere
              </Link>
@@ -132,7 +132,7 @@ function Register() {
         </div>
 
         <div data-aos='zoom-in' className='max-w-md w-full mx-auto space-y-3'>
-          <div className='flex items-center gap-3 mb-8'>
+          <div className='flex items-center gap-3 mb-8 sm:mb-0'>
             <Lock className='text-black text-3xl hidden md:block'/>
             <h1 className='text-black font-bold text-2xl md:text-3xl'>
               Create your account
@@ -210,7 +210,7 @@ function Register() {
             </button> */}
             
           </form>
-          <div className='mx-auto md:p-auto lg:pl-12'>
+          <div className='mx-auto md:p-auto '>
                 <GoogleOauth bgColors=''/>
             </div>
 

@@ -48,22 +48,25 @@ const GoogleOauth = ({bgColors}) => {
         }
     }
   return (
-      <div className='flex justify-center items-center '>
-         <img
-          src={Google}
-          className="w-4 h-4 relative z-30 left-10 md:left-12 lg:left-16 "
-          alt="Google Logo" 
-               />
-             <Button              
-               styles={`${bgColors} w-full
-    hover:scale-105 duration-700 transition-color
-   bg-transparent hover:bg-black/10  relative lg:-left-9  border-2 border-gray-400 group-hover:bg-tertiary/60
-      group-hover:text-white   rounded-md `}
-         disabled={isLoading}
-             text={isLoading ? 'Signing in...' : 'Continue with Google'}
-             onClick={handleClick}
-             />
-       </div>
+    <div className="flex justify-center w-full">
+    <button 
+      onClick={handleClick}
+      disabled={isLoading}
+      className={`${bgColors} flex items-center justify-center w-full 
+        hover:scale-105 duration-300 transition-all 
+        bg-transparent hover:bg-black/10 border-2 border-gray-400 
+        group-hover:bg-tertiary/60 group-hover:text-white rounded-md py-3 gap-3`}
+    >
+      <img
+        src={Google}
+        className="w-5 h-auto" // Keeps image size responsive
+        alt="Google Logo"
+      />
+      {isLoading ? 'Signing in...' : 'Continue with Google'}
+    </button>
+  </div>
+  
+  
   
   
    

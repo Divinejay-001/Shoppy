@@ -8,8 +8,13 @@ import { AppContext } from '../../context/AppContext';
 import toast from 'react-hot-toast';
 import Button from '../btn/Button';
 import Transiton from '../../Transiton';
+import GoogleOauth from '../../Google/GoogleOauth';
+
 const SignIn = () => {
   const {setUserInfo, userInfo} = useContext(AppContext); 
+ 
+
+  console.log("Component userInfo:", userInfo); // ✅ Should match AppContext state
 
   const [formData, setFormData] = useState({    
     email: '',    
@@ -23,7 +28,6 @@ const SignIn = () => {
     setFormData((prev) => ({ ...prev, [field]: value }));
     setErrors((prev) => ({ ...prev, [field]: '' })); // Clear error for that field
   };
-  
 
   const validate = () => {
     const errors = {};
@@ -106,7 +110,7 @@ const SignIn = () => {
       <div className='flex  items-center gap-3    sm:pb-0  pt-28 sm:pt-0  lg:pt-1 '>
         <div className=' flex justify-center items-center text-center mx-auto'>
           <h1 className='text-black font-bold
-          text-xl sm:pb-0 pb-12 lg:pb-16 sm:0 sm:text-3xl'>Sign in to Shophere</h1>
+          text-xl sm:pb-0 pb-12  sm:0 sm:text-3xl'>Sign in to Shophere</h1>
         </div>
       </div>
 <div className='w-full flex flex-col gap-8 sm:gap-4'>
@@ -131,11 +135,13 @@ const SignIn = () => {
  {/* <input type="date" placeholder='Date of Birth'  className='w-full px-4 py-4 sm:py-2 text-md border rounded-md shadow-lg focus:outline-none focus:border-black'  name="" id="" /> */}
 
     </form>
-    <div className='pt-1 group'>
+    <div className='pt-1 grid gap-2'>
      
       <Button disabled={loading}
       text={loading ? 'Signing in...' : 'Sign In'}/>
-      </div>
+        
+<div className=''><GoogleOauth/></div>
+     </div>
       <div className='flex flex-col gap-2 items-center'>
           <Link to='/forgotPass' className='text-blue-900 hover:text-red-800 text-center '>Forgot Password?</Link>
            
