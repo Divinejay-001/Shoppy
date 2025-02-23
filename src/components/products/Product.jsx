@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom'
 const ProductsData =[
     {
 id:1,
-img:'https://i.pinimg.com/736x/f0/d7/dc/f0d7dcf6110a4ad145f0cf76c84e162c.jpg',
+img:'https://i.pinimg.com/736x/2b/1c/c1/2b1cc1bd2f108cabc377d70c86f12739.jpg',
 title:"Women Ethnic",
 rating:5,
 color:'white',
