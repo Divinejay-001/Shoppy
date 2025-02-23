@@ -12,8 +12,8 @@ import { Link } from 'react-router-dom'
 const ProductsData =[
     {
 id:1,
-img:'https://i.pinimg.com/736x/2b/1c/c1/2b1cc1bd2f108cabc377d70c86f12739.jpg',
-title:"Women Ethnic",
+img:'https://i.pinimg.com/736x/a0/ae/9b/a0ae9ba1e19d1d1e86798987090d5346.jpg',
+title:"Modern Women",
 rating:5,
 color:'white',
 aosDelay:"0"
@@ -29,7 +29,7 @@ aosDelay:"200"
     {
 id:3,
 img:'https://i.pinimg.com/736x/ce/e1/fe/cee1fefa770a00d208a1f3d6ae916857.jpg',
-title:"Googles",
+title:"Classic Glasses",
 rating:5,
 color:'brown',
 aosDelay:"400"
