@@ -21,6 +21,7 @@ const Dash = () => {
         <Header toggleSideBar={toggleSideBar}/>
         <Sidebar isSideBarOpen={isSideBarOpen} />
         <Main>
+          
           <Content>
             <Stats/>
 
@@ -28,6 +29,7 @@ const Dash = () => {
             '>
               <Team/>
               <Event/>
+              
             </div>
           </Content>
           <Profile/>

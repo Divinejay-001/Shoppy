@@ -2,7 +2,7 @@ import React from 'react'
 import Banner from '../../assets/website/orange-pattern.jpg'
 
 const BannerImg = {
-    backgroundImage: `url(${Banner})`,
+    backgroundImage: `url(https://i.pinimg.com/736x/97/6f/2a/976f2aefd2c1ac0d32067c2444fc5a88.jpg)`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',

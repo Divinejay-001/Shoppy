@@ -95,7 +95,7 @@ object-fill rounded-md hover:scale-105 duration-500 transition-all'/>
                 {/* view btn  */}
                 <div data-aos='zoom-in' className='flex justify-center'>
                  <button className='text-center mt-10
-                 cursor-pointer bg-primary text-white
+                 cursor-pointer bg-gradient-to-r from-primary to-tertiary text-white
                  py-2 px-24 rounded-md'>
                 <Link to='/womensWear'>View All </Link>    
                     </button>   

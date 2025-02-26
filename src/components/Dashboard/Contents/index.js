@@ -20,6 +20,7 @@ import {
 import user01 from "../../../assets/DashImg/user01.png";
 import user02 from "../../../assets/DashImg/user02.png";
 import user03 from "../../../assets/DashImg/user03.png";
+import user04 from "../../../assets/DashImg/ceo.webp";
 
 export const links = [
   {
@@ -69,7 +70,7 @@ export const employeesData = [
   {
     title: "Total Employees",
     icon: IoIosPerson,
-    count: 200,
+    count: 80,
     bgColor: "bg-gray-100",
   },
   {

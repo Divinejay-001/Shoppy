@@ -62,7 +62,7 @@ const Navbar = ({handleOrderPopup}) => {
     <div className='shadow-md  bg-white dark:bg-gray-900
     dark:text-white duration-200 relative z-40'>
         {/* upper Navbar */}
-        <div className='bg-primary/40 py-2'>
+        <div className=' bg-gradient-to-r bg-primary/40 dark:from-tertiary/60 to-tertiary/50 dark:to-gray-900 py-2'>
     <div className='container flex justify-between
     items-center '>
         <div className='relative right-2'>
@@ -97,7 +97,7 @@ const Navbar = ({handleOrderPopup}) => {
     <button
     onClick={() => handleOrderPopup() }
     className='bg-gradient-to-r from-primary
-    to-secondary transition-all duration-200
+    to-tertiary transition-all duration-200
     text-white py-1 px-2 sm:px-4 rounded-full flex items-center
     gap-3 group'>
         <span
@@ -113,7 +113,7 @@ cursor-pointer' />
         <DarkMode/>
     </div>
     {/* Mobile Menu */}
-    <div className=' md:hidden ' onClick={()=>setOpen(!open)}> 
+    <div className=' md:hidden cursor-pointer ' onClick={()=>setOpen(!open)}> 
     {open ? (
             <IoMdClose className="text-3xl dark:text-white text-primary" /> // Render close icon if open
           ) : (

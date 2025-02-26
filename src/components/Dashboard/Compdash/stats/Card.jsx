@@ -9,7 +9,7 @@ const Card = ({data}) => {
         <data.icon/>
       </span>
       <div>
-        <h2 className='text-xl'><span className='text-2xl font-bold'>{data.count}</span>/250</h2>
+        <h2 className='text-xl'><span className='text-2xl font-bold'>{data.count}</span>/100</h2>
         <p className='font-bold'>{data.title}</p>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ShoppingCart, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo.webp'
 import Transiton from '../../Transiton';
 
 const products = [

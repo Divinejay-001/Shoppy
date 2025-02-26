@@ -116,12 +116,14 @@ const SignIn = () => {
 <div className='w-full flex flex-col gap-8 sm:gap-4'>
     <p className='text-lg mb-2 
     space-x-2'>Welcome Back! Please fill in your details.</p>
-    <form className='grid gap-4' onSubmit={handleSubmit}>
+    <form className='grid gap-4'
+     onSubmit={handleSubmit}>
       <input required type="text" className='w-full px-4 py-4 sm:py-2  text-md border rounded-md shadow-xl
       focus:outline-none focus:border-black' placeholder='Username' />
       <input required type="email" 
       value={formData.email} 
-      onChange={(e)=> handleInputChange('email', e.target.value)} className='w-full px-4 py-4 sm:py-2 text-md border rounded-md shadow-lg
+      onChange={(e)=> handleInputChange('email', e.target.value)} 
+      className='w-full px-4 py-4 sm:py-2 text-md border rounded-md shadow-lg
       focus:outline-none focus:border-black' placeholder='Email Address' />
        {errors.email && (
                   <p className="text-red-600 text-sm">{errors.email}</p>
@@ -137,7 +139,8 @@ const SignIn = () => {
     </form>
     <div className='pt-1 grid gap-2'>
      
-      <Button disabled={loading}
+      <Button
+     disabled={loading}
       text={loading ? 'Signing in...' : 'Sign In'}/>
         
 <div className=''><GoogleOauth/></div>
@@ -145,7 +148,7 @@ const SignIn = () => {
       <div className='flex flex-col gap-2 items-center'>
           <Link to='/forgotPass' className='text-blue-900 hover:text-red-800 text-center '>Forgot Password?</Link>
            
-            <p className='pt-0 text-center  text-sm  pl-7'>Don't have an account?  <Link to='/register' className='text-blue-900 hover:text-red-800 '>Sign Up</Link></p>
+            <p className='pt-0 text-center  text-sm  pl-7'>Don't have an account?  <Link to='/register' className= 'text-sm text-blue-900 hover:text-red-800 '>SignUp</Link></p>
       </div>
 </div>
 

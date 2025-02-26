@@ -12,7 +12,9 @@ const Responsivemenu = ({ open }) => {
                <Link to='/topRated' className='inline-block px-4
                             hover:text-primary duration-200'>Top Rated</Link>
                <Link to='/mensWear' className='inline-block px-4
-                            hover:text-primary duration-200'>Mens Wear</Link>
+                            hover:text-primary duration-200'>Men Wears</Link>
+               <Link to='/womensWear' className='inline-block px-4
+                            hover:text-primary duration-200'>Women Wears</Link>
                <Link to='/register' className='inline-block px-4
                             hover:text-primary duration-200'>Sign Up</Link>
                <Link to='/signin' className='inline-block px-4

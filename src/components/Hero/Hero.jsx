@@ -85,7 +85,7 @@ const Hero = ({ handleOrderPopup}) => {
     sm:min-h-[650px] bg-gray-100 flex justify-center items-center
     dark:bg-gray-950 dark:text-white duration-200'>
         {/* background pat  */}
-        <div className='h-[700px] w-[700px] bg-primary/40
+        <div className='h-[700px] w-[700px] bg-gradient-to-b bg-primary/40 dark:bg-gray-950  dark:from-tertiary/10   dark:to-tertiary/40
        absolute -top-1/2 right-0  rounded-3xl rotate-45 
        -z-9'>
            
@@ -121,7 +121,7 @@ order-2 sm:order-1 relative z-10'>
      >
         <button onClick={handleOrderPopup}
         className='bg-gradient-to-r from-primary
-        to-secondary duration-200 hover:scale-105
+        to-tertiary duration-200 hover:scale-105
         text-white py-2 px-4 rounded-full 
         '>Order Now </button>
      </motion.div>

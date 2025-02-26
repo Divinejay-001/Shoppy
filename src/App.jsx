@@ -29,6 +29,7 @@ import Transiton from './Transiton';
 import MensWear from './components/Men/MensWear';
 import Dash from './components/Dashboard/Dash';
 import WomensPage from './components/pages/WomensPage';
+import { ProductsPage } from './components/Dashboard/Compdash/productPage/ProductsPage';
 function App() {
 // const [orderPopup, setOrderPopup]=React.useState(false);
 
@@ -64,7 +65,10 @@ const location = useLocation()
       <Route path='/mensWear' element={<MensWear/>} />
       <Route path='/womensWear' element={<WomensPage/>} />
       <Route path='/verifyOtp' element={<VerifyOtpPage />} />
-      <Route path='/adminDash' element={<Dash/>} />
+      <Route path='/adminDash' element={<Dash/>} >
+        <Route path='/adminDash/' element={<ProductsPage/>} />
+      </Route>
+      
       </Routes>
       </AnimatePresence>
     </div>
