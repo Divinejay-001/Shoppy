@@ -19,7 +19,7 @@ const Transition = (OgComponent) => {
         }}
       >
 
-Fhhcdhcc12@
+
         <div className="relative">
           <motion.h1 
             className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text 

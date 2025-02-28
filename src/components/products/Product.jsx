@@ -9,6 +9,8 @@ import img7 from '../../assets/women/women7.jpeg'
 import img8 from '../../assets/women/women8.jpeg'
 import { FaStar } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
+
+
 const ProductsData =[
     {
 id:1,

@@ -15,6 +15,7 @@ import Shoes from './components/shoes/Shoes';
 import { BrowserRouter, Route, Router, Routes, useLocation } from 'react-router-dom';
 import Homepage from './components/pages/Homepage';
 import LandingPage from './components/pages/LandingPage';
+import ProfilePage from './components/pages/ProfilePage';
 import SignIn from './components/pages/Signin';
 import Signup from './components/signup';
 import { Toaster } from 'react-hot-toast';
@@ -30,6 +31,7 @@ import MensWear from './components/Men/MensWear';
 import Dash from './components/Dashboard/Dash';
 import WomensPage from './components/pages/WomensPage';
 import { ProductsPage } from './components/Dashboard/Compdash/productPage/ProductsPage';
+import PrivateRoutes from './components/PrivateRoutes';
 function App() {
 // const [orderPopup, setOrderPopup]=React.useState(false);
 
@@ -53,22 +55,28 @@ const location = useLocation()
       <Toaster/>
       <AnimatePresence mode='wait'>
     <Routes location={location} key={location.pathname}>
-      <Route path='/home' element={<Homepage />} />
       <Route  index element={<LandingPage/>} />
       <Route path='/signin' element={<SignIn />} />
       {/* <Route path='/signup' element={<Signup />} /> */}
-      <Route path='/reset' element={<ResetPassword />} />
       <Route path='/verifyUser/:id/verify/:token' element={<UserVerification />} />
       <Route path='/register' element={<Register />} />
-      <Route path='/forgotPass' element={<ForgotPasswordPage />} />
       <Route path='/topRated' element={<TopRated />} />
       <Route path='/mensWear' element={<MensWear/>} />
       <Route path='/womensWear' element={<WomensPage/>} />
+      <Route path='/forgotPass' element={<ForgotPasswordPage />} />
       <Route path='/verifyOtp' element={<VerifyOtpPage />} />
-      <Route path='/adminDash' element={<Dash/>} >
+      <Route path='/reset' element={<ResetPassword />} />
+
+
+{/* Private  */}
+<Route path='' element={<PrivateRoutes/>}>
+<Route path='/home' element={<Homepage />} />
+<Route path='/adminDash' element={<Dash/>} >
         <Route path='/adminDash/' element={<ProductsPage/>} />
       </Route>
-      
+      <Route path='/profile' element={<ProfilePage />} />
+</Route>
+
       </Routes>
       </AnimatePresence>
     </div>

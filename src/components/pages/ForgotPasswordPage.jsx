@@ -1,99 +1,130 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { FaMailchimp } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import { Mail } from "lucide-react";
-const ForgotPasswordPage = () => {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+import { useContext, useState } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { AppContext } from '../../context/AppContext';
+import Logo from '../../assets/logo.png'; // Ensure Logo component is properly imported
+// import InputBox from "../components/InputBox";
+import { FaEnvelope } from "react-icons/fa";
+import Button from '../btn/Button';
+import toast from "react-hot-toast";
 
-  const handleSubmit = (e) => {
+
+const ForgotPasswordPage = () => {
+    const {setUserInfo, userInfo} = useContext(AppContext);  
+    const [email, setEmail] = useState(''); 
+    const [isLoading, setIsloading] = useState(false);
+    const navigate = useNavigate();  
+
+    let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; // regex for email     
+
+    const [validationErrors, setValidationErrors] = useState({        
+        email:""             
+    })   
+
+    const handleChange = (e) => {        
+        const { value } = e.target;
+        setEmail(value.trim());
+    }
+
+    const validateForm = () => {
+        const validationErrors = {};
+        
+        if (!email.trim()) {
+            validationErrors.email = 'Email is required';
+        } else if (!emailRegex.test(email)) {
+            validationErrors.email = 'Email is invalid';
+        } 
+    
+        setValidationErrors(validationErrors);
+    
+        // If there are any validation errors, return false
+        return Object.keys(validationErrors).length === 0;
+    }
+    
+
+const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle password reset logic here
-    setSubmitted(true);
-  };
+    setIsloading(true);
+
+    // Check if the form is valid
+    const isValidForm = validateForm();
+
+    // If the form is not valid, stop form submission
+    if (!isValidForm) {
+        setIsloading(false); 
+        return;
+    }
+
+    try {
+        // Submit the form data
+        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/generateOTP`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({email}),
+        });
+        
+        const result = await res.json(); 
+        console.log(result)
+        const { success, message } = result
+        if(success == false){
+            toast.error(message)
+        }else{
+            toast.success(message);            
+            setTimeout(() => {
+                // Pass the masked email to the next page
+                navigate('/verifyOtp', { state: { email } }); 
+                setEmail('');              
+            }, 3000)            
+        }
+        console.log('result >>', result);
+    } catch (err) {
+        console.log('backend error >>', err);
+        // toast.error(err?.data?.message)
+    } finally {
+        setIsloading(false);
+    }
+}
 
   return (
-    <div className="flex items-center justify-center text-gray-700 min-h-screen bg-gray-100">
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="w-full max-w-md p-4 shadow-2xl rounded-2xl bg-white"
-      >
-        <div>
-          
-          {!submitted ? (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <h2 className="text-2xl font-bold text-center mb-4 text-gray-800">
-            Forgot Password
-          </h2>
-          <p className="text-center"> You will receive an otp shortly</p>
-              <div>
-                
-                <div className="flex justify-center items-center">
-                  <input
-                    id="email"
-                    type="email"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="mt-1 block w-full px-3 py-2  border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                    required
-                  />
-                  <Mail className="relative right-7"/>
-                </div>
-              </div>
-              <button
-                type="submit"
-                className="w-full mt-2 px-4 py-2 bg-tertiary text-white font-medium text-sm rounded-md hover:bg-blue-700 focus:outline-none duration-1000 transition scale-100 focus:ring-2 focus:ring-blue-500"
-              >
-                Send OTP              </button>
-            </form>
-          ) : (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="text-center "
-            >
-              <p className="text-gray-700 text-sm">
-                Enter the OTP sent to your email
-              </p>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="">
-                  <label htmlFor="otp" className="block text-sm font-medium text-gray-700">
-                    OTP
-                  </label>
-                  <div className="flex">
-                    <input
-                      id="otp"
-                      type="number"
-                      placeholder="Enter the OTP"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="mt-1 block w-full px-3 py-2 border border-gray-300 text-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                      required
-                    
-                    
-                    />
-      <FaMailchimp className="relative text-center right-6 -bottom-3 text-xl text-gray-400" />
-                  </div>
+    <>
+    {
+        userInfo ? (
+            <Navigate to={'/'}/>
+        ) : (            
+            <section className="grid place-items-center bg-grey min-h-screen"> 
+               <div className='flex space-x-1 items-center absolute  text-3xl left-6 top-3'>
+                                                 <img className="w-8 h-8 object-cover rounded-full" src={Logo} alt="Logo" />
+                                              <Link to='/' className=' text-white font-semibold'>Shophere</Link>
+                                            </div>
+                <div className="h-auto bg-white w-auto relative overflow-hidden p-[1rem]  md:p-[3rem] rounded-[20px] shadow-lg">
+                    <form className="w-full" >
+                        <h1 className="text-4xl text-primary font-extrabold capitalize text-center  mb-12">
+                            Forgot Password
+                        </h1>
+                        <p className="mb-5 text-primary">You will receive an OTP to reset your Password</p>
+                        <input                
+                            name="email"
+                            type='email'
+                            placeholder="Email"
+                            onChange={handleChange}
+                            icon={<FaEnvelope />}
+                            value={email}
+                            errorMessage={validationErrors.email}
+                            className='w-full px-4 py-2 text-black text-md border rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-transparent'
 
+                        />   
+                         <Button
+                            onClick={handleSubmit}
+                            disabled={isLoading}
+                            text={isLoading ? 'Sending...' : 'Send OTP'}
+                            styles="mt-4 bg-primary hover:bg-green-700 hover:text-white transition duration-500 text-black md:w-full xl:w-full"
+                        />
+                    </form>
                 </div>
-              <Link to='/reset'>
-                <button type="submit"
-                    className="w-full mt-2 px-4 py-2 bg-tertiary text-white font-medium text-sm rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 duration-700">
-                Verify
-                </button>
-              </Link>
-              </form>
-            </motion.div>
-          )}
-        </div>
-      </motion.div>
-    </div>
-  );
-};
+            </section>        
+        )
+    }
+</> 
+  )
+}
 
-export default ForgotPasswordPage;
+export default ForgotPasswordPage

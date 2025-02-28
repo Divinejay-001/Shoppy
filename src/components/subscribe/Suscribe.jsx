@@ -20,7 +20,7 @@ const Suscribe = () => {
             <h1 className='
             text-2xl !text-center sm-text-left sm:text-4xl
             font-semibold'>Get Notified About New Products</h1>
-            <input  type="email" placeholder='Enter Your Email'
+            <input  type="email" placeholder='Enter Your Number'
             className='w-full p-3 text-black' />
         </div>
         </div>

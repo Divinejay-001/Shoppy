@@ -220,87 +220,79 @@ const products = [
 ];
 
 
-const addToCart = (product) => {
-    setCart(prevCart => {
-      const existingItem = prevCart.find(item => item.id === product.id);
-      if (existingItem) {
-        return prevCart.map(item =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
-      }
-      return [...prevCart, { ...product, quantity: 1 }];
-    });
-  };
-
-  const removeFromCart = (productId) => {
-    setCart(prevCart => prevCart.filter(item => item.id !== productId));
-  };
-
-  const updateQuantity = (productId, newQuantity) => {
-    if (newQuantity < 1) return;
-    setCart(prevCart =>
-      prevCart.map(item =>
-        item.id === productId
-          ? { ...item, quantity: newQuantity }
-          : item
-      )
-    );
-  };
 function MensWear({ setCartCount }) {
-    const [cart, setCart] = useState([]);
-      const [isCartOpen, setIsCartOpen] = useState(false);
-  return (
-    <div className="max-w-7xl  text-black  mx-auto px-4 sm:px-6 lg:px-8 py-12 dark:text-white">
-      <div className='flex items-center gap-1 relative bottom-5 right-1'>
-            <img src={Logo} className='w-9 h-8' alt="" />
-            <Link to='/home' className="text-3xl font-bold text-black dark:text-white ">Shophere</Link>
-        </div>
-      <div className="flex justify-center items-center mb-8">
-        <h1>Mens Wear</h1>
-       <div className='absolute right-14'>
-         <button
-                        onClick={() => setIsCartOpen(true)}
-                        className="relative text-gray-600 hover:text-gray-900"
-                      >
-                        <ShoppingCart className="w-6 h-6 dark:text-white" />
-                        {cart.length > 0 && (
-                          <span className="absolute -top-1 -right-2 bg-blue-600 text-white rounded-full w-4 h-4 text-xs flex items-center justify-center">
-                            {cart.reduce((sum, item) => sum + item.quantity, 0)}
-                          </span>
-                        )}
-                      </button>
-       </div>
-      </div>
+  const [cart, setCart] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {products.map((product) => (
-          <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden group">
-            <div className="relative">
-              <img 
-                src={product.image} 
-                alt={product.name}
-                className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <button 
-                    onClick={() => addToCart(product)}
-                    className="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100"
-              >
-                <ShoppingCart size={20} className="text-gray-700" />
-              </button>
-            </div>
-            <div className="p-4">
-              <h3 className="text-lg font-semibold text-gray-900">{product.name}</h3>
-              <p className="text-gray-600 text-sm mb-2">{product.category}</p>
-              <p className="text-xl font-bold text-gray-900">₦{product.price}</p>
-            </div>
+  // Fix: Move addToCart inside component so it has access to `cart` and `setCart`
+  const addToCart = (product) => {
+      setCart(prevCart => {
+          const existingItem = prevCart.find(item => item.id === product.id);
+          if (existingItem) {
+              return prevCart.map(item =>
+                  item.id === product.id
+                      ? { ...item, quantity: item.quantity + 1 }
+                      : item
+              );
+          }
+          return [...prevCart, { ...product, quantity: 1 }];
+      });
+
+      // Optional: Update parent cart count if needed
+      if (setCartCount) {
+          setCartCount(prev => prev + 1);
+      }
+  };
+
+  return (
+      <div className="max-w-7xl text-black mx-auto px-4 sm:px-6 lg:px-8 py-12 dark:text-white">
+          <div className='flex items-center gap-1 relative bottom-5 right-1'>
+              <img src={Logo} className='w-9 h-8' alt="Logo" />
+              <Link to='/home' className="text-3xl font-bold text-black dark:text-white">Shophere</Link>
           </div>
-        ))}
+          <div className="flex justify-center items-center mb-8">
+              <h1>Mens Wear</h1>
+              <div className='absolute right-14'>
+                  <button
+                      onClick={() => setIsCartOpen(true)}
+                      className="relative text-gray-600 hover:text-gray-900"
+                  >
+                      <ShoppingCart className="w-6 h-6 dark:text-white" />
+                      {cart.length > 0 && (
+                          <span className="absolute -top-1 -right-2 bg-blue-600 text-white rounded-full w-4 h-4 text-xs flex items-center justify-center">
+                              {cart.reduce((sum, item) => sum + item.quantity, 0)}
+                          </span>
+                      )}
+                  </button>
+              </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {products.map((product) => (
+                  <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden group">
+                      <div className="relative">
+                          <img
+                              src={product.image}
+                              alt={product.name}
+                              className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                          <button
+                              onClick={() => addToCart(product)}
+                              className="absolute bottom-4 right-4 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100"
+                          >
+                              <ShoppingCart size={20} className="text-gray-700" />
+                          </button>
+                      </div>
+                      <div className="p-4">
+                          <h3 className="text-lg font-semibold text-gray-900">{product.name}</h3>
+                          <p className="text-gray-600 text-sm mb-2">{product.category}</p>
+                          <p className="text-xl font-bold text-gray-900">₦{product.price}</p>
+                      </div>
+                  </div>
+              ))}
+          </div>
       </div>
-      
-    </div>
   );
 }
 
-export default Transition (MensWear) ;
+export default Transition(MensWear);

@@ -9,6 +9,11 @@ import { list } from 'postcss'
 import { Link } from 'react-router-dom'
 import Responsivemenu from './responsive/Responsivemenu'
 import { HiOutlineMenuAlt3} from 'react-icons/hi'
+import { LogOut } from 'lucide-react'
+import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { logout } from "../store/slices/authSlice";
 
 const Menu = [
     {
@@ -58,6 +63,28 @@ const DropdownLinks =[
     ]
 const Navbar = ({handleOrderPopup}) => {
     const [open, setOpen]= useState(false);
+    const [loading, setLoading] = React.useState(false);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+  
+    const signoutUser = async () => {
+      setLoading(true);
+      try {
+          const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/signout`, {
+              method: 'GET',
+              headers: { 'Content-Type': 'application/json' }
+          })
+  
+          const { message:statusMessage } = await res.json();        
+          console.log({statusMessage});
+          toast.success(statusMessage);
+          setLoading(false);
+          dispatch(logout());    
+          navigate('/signin');   
+      } catch (error) {
+          setLoading(false);
+      }
+  }
   return (
     <div className='shadow-md  bg-white dark:bg-gray-900
     dark:text-white duration-200 relative z-40'>
@@ -112,6 +139,22 @@ cursor-pointer' />
     <div>
         <DarkMode/>
     </div>
+    <button
+  onClick={signoutUser}
+  className="hidden md:flex justify-center  bg-gradient-to-r from-primary
+    to-tertiary transition-none duration-200 text-white py-1 px-2 sm:px-3
+    rounded-md items-center gap-2 group "
+>
+  <LogOut className='text-xl text-white drop-shadow-sm
+cursor-pointer' />
+  <span
+    className="max-w-0 group-hover:max-w-[80px] overflow-hidden whitespace-nowrap transition-all duration-200"
+  >
+    Log Out
+  </span>
+</button>
+
+
     {/* Mobile Menu */}
     <div className=' md:hidden cursor-pointer ' onClick={()=>setOpen(!open)}> 
     {open ? (

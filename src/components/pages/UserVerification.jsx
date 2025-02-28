@@ -1,39 +1,118 @@
 import React from 'react';
 import { Mail, Lock, ArrowRight, Shield } from 'lucide-react';
+import { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import Loader from '../Loader';
+import toast from 'react-hot-toast';
+import { AppContext } from '../../context/AppContext';
+import Button from '../btn/Button';
 
 function UserVerification() {
+  const [isLoading, setIsLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const { token, id }= useParams();
+    const navigate = useNavigate();
+    const [userId, setUserId] = useState('');
+    const [status, setStatus] = useState(false);
+    const { setUserInfo, setIsVerified, isVerified } = useContext(AppContext);
+   
+
+    const resendVerificationEmail = async() => {
+        try {
+            setIsLoading(true);
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/resendVerificationMail/${id}`, {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' }
+            })
+
+            const { message:statusMessage, userId, success} = await res.json();
+
+            if(success == false){
+                setStatus(false); 
+                toast.error(statusMessage);                   
+            }else{
+                setUserId(userId);                    
+                setStatus(true);
+                toast.success(statusMessage);
+            }
+            setIsLoading(false);
+            setStatus(status);
+            setLoading(false);
+        } catch (error) {
+            setLoading(false);
+        }
+    }
+
+    const verifyUser = async () => {
+        try {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/${id}/verify/${token}`, {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' }
+            })
+
+            const { message:statusMessage, userId, success, user} = await res.json();
+
+            if(success == false){
+                setStatus(false);
+                toast.error(statusMessage);                                      
+            }else{
+                setUserId(userId);                    
+                setStatus(true);
+                toast.success(statusMessage);
+                setIsVerified(true);
+                setUserInfo(user);                    
+            }
+            // setMessage(statusMessage);
+            setStatus(status)
+            setLoading(false);
+        } catch (error) {
+            setLoading(false);
+        }
+    }
+    useEffect(() => { 
+        if (!isVerified) {
+            verifyUser();
+        }
+    }, [])
+
+    useEffect(() => {
+        if(isVerified) {
+            setLoading(false);
+        }
+    }, [isVerified])
+    
   return (
-    <div  className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
-      <div data-aos='zoom-in' className="max-w-md w-full bg-white  rounded-2xl shadow-xl p-8">
-        <div className="text-center  mb-8">
-          <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center gap-3 justify-center mx-auto mb-4">
-            <Shield className="w-8 h-8 text-indigo-600" />
-          </div>
-          <h2 className="text-3xl font-bold text-gray-800">Verify Account</h2>
-          <div>
-  <p className='text-sm  text-red-700'>Your account has not been verified</p>
+    <div className="grid place-items-center h-screen container bg-tertiary/30 px-4">
+      <img src="" alt=""  />
+    {
+        loading ? (
+            <Loader/>
+        ) : (
+            isVerified == true ? (
+                <div className="text-center  flex flex-col gap-3 items-center">
+                    <h1 className="font-gelasio text-5xl">Your Account is successfully verified</h1>
+                    <Button
+                        text={'Update your Profile'}
+                        styles="bg-primary hover:bg-orange-700 transition duration-500 text-white"
+                        disabled={false}
+                        onClick={() => navigate(`/profile`)}
+                    />
+                </div>
+            ) : (
+                <div className="text-center flex flex-col gap-3 items-center">
+                    <h1 className={`font-gelasio text-5xl`}>Your account is not verified</h1>
+                    <Button
+                        text={isLoading ? 'Sending...' : 'Resend Verification Email'}
+                        styles="bg-primary hover:bg-orange-700 transition duration-500 text-white"
+                        disabled={isLoading}
+                        onClick={resendVerificationEmail}
+                    />                        
+            </div>
+            )
+            
+        )
+    }        
 </div>
-        </div>
-
-        <form className="space-y-6">
-          
-           
-          <button
-            type="submit"
-            className="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 
-                     transition-colors duration-200 flex items-center justify-center space-x-2 
-                     focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-          >
-            <span>Resend Verification Email</span>
-            <ArrowRight className="w-5 h-5" />
-          </button>
-        </form>
-
-        <p className="text-center text-sm text-gray-600 mt-6">
-          Need help? <a href="#" className="text-indigo-600 hover:text-indigo-500">Contact Support</a>
-        </p>
-      </div>
-    </div>
   );
 }
 
