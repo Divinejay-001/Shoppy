@@ -58,7 +58,7 @@ const location = useLocation()
       <Route  index element={<LandingPage/>} />
       <Route path='/signin' element={<SignIn />} />
       {/* <Route path='/signup' element={<Signup />} /> */}
-      <Route path='/verifyUser/:id/verify/:token' element={<UserVerification />} />
+      <Route path='/verifyUser' element={<UserVerification />} />
       <Route path='/register' element={<Register />} />
       <Route path='/topRated' element={<TopRated />} />
       <Route path='/mensWear' element={<MensWear/>} />
