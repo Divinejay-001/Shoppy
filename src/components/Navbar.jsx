@@ -72,7 +72,8 @@ const Navbar = ({handleOrderPopup}) => {
       try {
           const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/signout`, {
               method: 'GET',
-              headers: { 'Content-Type': 'application/json' }
+              headers: { 'Content-Type': 'application/json' },
+            //   credentials: 'include'
           })
   
           const { message:statusMessage } = await res.json();        
