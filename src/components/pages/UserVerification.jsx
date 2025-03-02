@@ -49,6 +49,8 @@ function UserVerification() {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' }
             })
+            console.log('Using API base URL:', import.meta.env.VITE_API_BASE_URL);
+
 
             const { message:statusMessage, userId, success, user} = await res.json();
 
