@@ -99,7 +99,11 @@ object-fill rounded-md hover:scale-105 duration-500 transition-all'/>
                  <button className='text-center mt-10
                  cursor-pointer bg-gradient-to-r from-primary to-tertiary text-white
                  py-2 px-24 rounded-md'>
-                <Link to='/womensWear'>View All </Link>    
+                <Link to='/womensWear ' 
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+
+                >View All </Link>  
+  
                     </button>   
                 </div>
             </div>

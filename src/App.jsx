@@ -66,11 +66,11 @@ const location = useLocation()
       <Route path='/forgotPass' element={<ForgotPasswordPage />} />
       <Route path='/verifyOtp' element={<VerifyOtpPage />} />
       <Route path='/reset' element={<ResetPassword />} />
+      <Route path='/home' element={<Homepage />} />
 
 
 {/* Private  */}
 <Route path='' element={<PrivateRoutes/>}>
-<Route path='/home' element={<Homepage />} />
 <Route path='/adminDash' element={<Dash/>} >
         <Route path='/adminDash/' element={<ProductsPage/>} />
       </Route>
