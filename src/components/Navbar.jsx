@@ -140,19 +140,27 @@ cursor-pointer' />
     <div>
         <DarkMode/>
     </div>
-    <button
+  <button
   onClick={signoutUser}
-  className="hidden md:flex justify-center  bg-gradient-to-r from-primary
-    to-tertiary transition-none duration-200 text-white py-1 px-2 sm:px-3
-    rounded-md items-center gap-2 group "
+  className="hidden md:flex items-center gap-2 
+    px-[18px] py-[10px] rounded-full
+    border border-white/20
+    bg-transparent text-white text-sm font-medium
+    relative overflow-hidden
+    transition-colors duration-250
+    active:scale-[0.97]
+    group"
 >
-  <LogOut className='text-xl text-white drop-shadow-sm
-cursor-pointer' />
+  {/* sweep layer */}
   <span
-    className="max-w-0 group-hover:max-w-[80px] overflow-hidden whitespace-nowrap transition-all duration-200"
-  >
-    Log Out
-  </span>
+    className="absolute inset-0  bg-white
+      -translate-x-full group-hover:translate-x-0
+      transition-transform duration-250 ease-in-out"
+    aria-hidden="true"
+  />
+
+  <LogOut size={16} className="relative z-10 shrink-0 text-black" />
+  <span className="relative z-10 text-black">Log out</span>
 </button>
 
 
