@@ -104,7 +104,7 @@ const Navbar = ({handleOrderPopup}) => {
         {/* search bar  */}
         <div className='flex justify-between items-center
         md:gap-4 gap-2 '>
-            <div className='relative group hidden md:block'>
+            {/* <div className='relative group hidden md:block'>
             <input 
             type="text" 
             placeholder='search
@@ -120,7 +120,7 @@ const Navbar = ({handleOrderPopup}) => {
             className='text-gray-500 
             group-hover:text-primary absolute
             top-1/2 -translate-y-1/2 right-3'/>
-        </div>
+        </div> */}
     {/* Order button  */}
     <button
     onClick={() => handleOrderPopup() }
