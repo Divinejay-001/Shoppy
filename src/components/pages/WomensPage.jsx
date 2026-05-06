@@ -360,6 +360,13 @@ function WomensPage() {
       price: 89.99,
       category: "pants",
       image: 'https://i.pinimg.com/736x/75/6f/f1/756ff13cc3a4a1ffa1442a3129bab67e.jpg'
+    },
+    {
+      id: 51,
+      name: "Glasses",
+      price: 13,
+      category: "Glasses",
+      image: 'https://i.pinimg.com/1200x/90/09/d5/9009d5ac438cf257678bf116189bd532.jpg'
     }
   ];
   
